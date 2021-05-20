@@ -132,31 +132,27 @@ class Quotations extends Component {
                                 ? this.props.backButton
                                 : null}
                         </div>
-                        <p1>Choose Your Preferred Plan</p1>
-                        
-<PricingTable  highlightColor='#1976D2'>
-    <PricingSlot  onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 20' priceText='RM 45.99/month'>
-        <PricingDetail>with <b>RM20,000</b> annual limit</PricingDetail>
-        <PricingDetail> Cover for hospitalization<b> in Malaysia only</b>, up to RM20,000, including surgery, ambulance, ICU and prescription</PricingDetail>
-        <PricingDetail> Cashless admission to AXA panel hospital</PricingDetail>
-        <PricingDetail>Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
-    </PricingSlot>
-    <PricingSlot highlighted onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 50' priceText='RM 48.99/month'>
-        <PricingDetail> with <b>RM50,000</b> annual limit</PricingDetail>
-        <PricingDetail> Cover for hospitalization<b> in Malaysia only</b>, up to RM50,000, including surgery, ambulance, ICU and prescription</PricingDetail>
-        <PricingDetail>Cashless admission to AXA panel hospital</PricingDetail>
-        <PricingDetail> Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
-    </PricingSlot>
-    <PricingSlot  onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 100' priceText='RM 51.99/month'>
-        <PricingDetail>with <b>RM100,000</b> annual limit</PricingDetail>
-        <PricingDetail> Cover for hospitalization <b>in Malaysia only</b>, up to RM100,000, including surgery, ambulance, ICU and prescription</PricingDetail>
-        <PricingDetail>Cashless admission to AXA panel hospital</PricingDetail>
-        <PricingDetail> Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
-    </PricingSlot>
-</PricingTable>
-
-
-
+                        <p1>Choose Your Preferred Plan</p1>                   
+                            <PricingTable  highlightColor='#1976D2'>
+                                <PricingSlot  onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 20' priceText='RM 45.99/month'>
+                                    <PricingDetail>with <b>RM20,000</b> annual limit</PricingDetail>
+                                    <PricingDetail> Cover for hospitalization<b> in Malaysia only</b>, up to RM20,000, including surgery, ambulance, ICU and prescription</PricingDetail>
+                                    <PricingDetail> Cashless admission to AXA panel hospital</PricingDetail>
+                                    <PricingDetail>Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
+                                </PricingSlot>
+                                <PricingSlot highlighted onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 50' priceText='RM 48.99/month'>
+                                    <PricingDetail> with <b>RM50,000</b> annual limit</PricingDetail>
+                                    <PricingDetail> Cover for hospitalization<b> in Malaysia only</b>, up to RM50,000, including surgery, ambulance, ICU and prescription</PricingDetail>
+                                    <PricingDetail>Cashless admission to AXA panel hospital</PricingDetail>
+                                    <PricingDetail> Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
+                                </PricingSlot>
+                                <PricingSlot  onClick={this.submit} buttonText='Choose This Plan' title='eMedic Plan 100' priceText='RM 51.99/month'>
+                                    <PricingDetail>with <b>RM100,000</b> annual limit</PricingDetail>
+                                    <PricingDetail> Cover for hospitalization <b>in Malaysia only</b>, up to RM100,000, including surgery, ambulance, ICU and prescription</PricingDetail>
+                                    <PricingDetail>Cashless admission to AXA panel hospital</PricingDetail>
+                                    <PricingDetail> Cover for room and board up to RM250 a day (choose any room type that is available within this budget)</PricingDetail>
+                                </PricingSlot>
+                            </PricingTable>
                     </div>
                 </div>
                 
