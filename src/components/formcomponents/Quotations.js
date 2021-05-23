@@ -33,7 +33,9 @@ class Quotations extends Component {
         let response = await fetch(url, {
             method: 'POST',
             headers: {
-                Authorization: 'Y3VybGVjOlM0enE3ZkRCVVFNYTNGcGV4UmZF',
+                
+                Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
+                'Content-Type': 'application/json',
             }
         });
 
@@ -48,6 +50,7 @@ class Quotations extends Component {
         let response = await fetch(url, {
             method: 'GET',
             headers: {
+                'Content-Type': 'application/json',
                 'x-access-token': accessToken
             }
         });
