@@ -6,16 +6,16 @@ class PlanComponent extends Component {
         
         switch(this.props.index) {
             case 0:
-                backgroundColor = '#F66F8D'
+                backgroundColor = '#FFFFe6'
                 break;
             case 1:
-                backgroundColor = "#FFB643"
+                backgroundColor = "#FFFFe6"
                 break;
             case 2:
-                backgroundColor = '#8DBD61'
+                backgroundColor = '#FFFFe6'
                 break;
             default:
-                backgroundColor= '#F66F8D'
+                backgroundColor= '#FFFFe6'
                 break;
         }
 
@@ -45,7 +45,7 @@ class PlanComponent extends Component {
                         </li>
                     </ul>
                 </div>
-                <div className={'choose-plan-btn'} style={{color: backgroundColor}}>Choose This Plan</div>
+                <div className={'choose-plan-btn'} style={{color: 'purple'} } >Choose This Plan</div>
             </div>
         );
     }
