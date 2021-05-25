@@ -21,7 +21,7 @@ class Page1 extends Component {
             <div className="landing-div">
                 <ImageWrapper />
                 <CurlecLogo />
-                <TopMenuBtn/>
+                <TopMenuBtn curRef={this.curRef}/>
                 <EMedicLogo />
                 <LandingParagraph />
                 <CheckPriceBtn curRef={this.curRef}/>
