@@ -44,7 +44,8 @@ class PlanComponent extends Component {
                         </li>
                     </ul>
                 </div>
-                <div className={'choose-plan-btn'} style={{color: 'purple'} } >Choose This Plan</div>
+                
+                <div style={{background: '#710193'}} className="choose-plan-btn">GET STARTED ⪢</div>
             </div>
         );
     }

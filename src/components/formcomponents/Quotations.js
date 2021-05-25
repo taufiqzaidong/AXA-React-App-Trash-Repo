@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import PlanComponent from './QuotationComponents/PlanComponent';
-import {PricingTable, PricingSlot, PricingDetail} from 'react-pricing-table';
- 
 
-class Example extends React.Component {
- 
-    render() {
-      return  <PricingTable  highlightColor='#f44336'> ... </PricingTable>
-    }
-  }
 
 class Quotations extends Component {
     constructor(props) {
