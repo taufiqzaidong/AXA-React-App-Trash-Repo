@@ -1,3 +1,7 @@
+ul.plan-description{
+    list-style-type:'✓   ';
+}
+
 .third-seg-background-wrapper {
     position: relative;
     min-height: 100vh;
