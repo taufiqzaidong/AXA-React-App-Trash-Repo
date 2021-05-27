@@ -20,19 +20,19 @@ class PlanComponent extends Component {
         }
 
         return (
-            <div className={"individual-plan"} style={{'backgroundColor': backgroundColor}}>
-                <div className={'plan-header'}>{`eMedic ${this.props.plan.name}`} </div>
+            <div style={{'backgroundColor': backgroundColor }} className={"individual-plan"} >
+                <div  className={'plan-header'}>{`eMedic ${this.props.plan.name}`} </div>
                 <div className={'plan-price'}>RM {this.props.basePriceMonthly}<span>/month</span></div>
-                <div className={'plan-annual-limit'}>
-                    with {`RM ${this.props.plan["annual_limit"].toLocaleString()}`} annual limit
+               <div style={{fontSize: 15}} className={'plan-annual-limit'}>
+                    with {`RM${this.props.plan["annual_limit"].toLocaleString()}`} annual limit
                 </div>
-                <div className={'plan-info'}>
+                <div style={{fontSize: 13}}   className={'plan-info'}>
                     <ul className='plan-description'>
                         <li>
                             <span>
                                 Cover for hospitalisation expenses{" "}
                                 <strong>in Malaysia only,</strong> up to
-                                RM{`RM ${this.props.plan["annual_limit"].toLocaleString()}`}, including surgery, ambulance, ICU and
+                                RM{` ${this.props.plan["annual_limit"].toLocaleString()}`}, including surgery, ambulance, ICU and
                                 prescription drugs<br/><br/>
                             </span>
                         </li>
@@ -45,7 +45,7 @@ class PlanComponent extends Component {
                     </ul>
                 </div>
                 
-                <div style={{background: '#710193'}} className="choose-plan-btn">GET STARTED ⪢</div>
+                <div  className="getstarted-btn" >Choose This Plan ⪢</div>
             </div>
         );
     }
