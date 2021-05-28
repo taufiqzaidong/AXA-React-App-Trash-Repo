@@ -46,7 +46,7 @@ class PlanComponent extends Component {
                 </div>
                 
                 <div  className="getstarted-btn" 
-                //onClick={this.props.children}
+                //onClick="submissionForm()" @ {this.props.children}
                 >Choose This Plan ⪢</div>
             </div>
         );
