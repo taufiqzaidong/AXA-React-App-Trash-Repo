@@ -45,7 +45,9 @@ class PlanComponent extends Component {
                     </ul>
                 </div>
                 
-                <div  className="getstarted-btn" >Choose This Plan ⪢</div>
+                <div  className="getstarted-btn" 
+                //onClick={this.props.children}
+                >Choose This Plan ⪢</div>
             </div>
         );
     }
