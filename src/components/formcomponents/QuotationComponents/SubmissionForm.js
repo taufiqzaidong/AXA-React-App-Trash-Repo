@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-class SubmissionForm  extends Component{
-    //render ni cane nak gune??
-    //render() {
-      //  return (
-        //  <form>
-        //    <h1>Hello</h1>
-        //    <input
-         //     type="text"
-         //   />
-     //     </form>
-     //   );
-    //  }
+class SubmissionForm  extends PlanComponent{
+  constructor(props) {
+    super(props);
+    this.state = { username: '' };
+  }
+  myChangeHandler = (event) => {
+    this.setState({username: event.target.value});
+  }
+  render() {
+    return (
+      <form>
+      <h1>Hello {this.state.username}</h1>
+      <p>Enter your name:</p>
+      <input
+        type='text'
+        onChange={this.myChangeHandler}
+      />
+      </form>
+    );
+  }
 }
-export default SubmissionForm;
+ReactDOM.render(<MyForm />, document.getElementById('root'));
