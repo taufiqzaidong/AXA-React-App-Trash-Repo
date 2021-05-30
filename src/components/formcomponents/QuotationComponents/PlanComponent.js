@@ -62,7 +62,7 @@ class PlanComponent extends Component {
                 </div>
                 
                 
-                <button  onClick={this.onSubmitForm} className="getstarted-btn" >Choose This Plan ⪢</button>
+                <button  onClick={() => window.scrollTo(0,document.body.scrollHeight)} className="getstarted-btn" >Choose This Plan ⪢</button>
             </div>
         );
     }
