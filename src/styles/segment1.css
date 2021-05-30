@@ -29,6 +29,15 @@
     top: 0;
     opacity: 33%;
 }
+.image-wrapper2 {
+    background-image: url("./background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    opacity: 100%;
+}
 .landing-title {
    
     font-weight: 300;
@@ -170,6 +179,9 @@ button.faqs-btn{
     }
 
     .image-wrapper {
+        background-position: 50% 45%;
+    }
+    .image-wrapper2 {
         background-position: 50% 45%;
     }
     .landing-title {

@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 
+
+
+
 class PlanComponent extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+        };
+        this.submitForm = this.submitForm.bind(this);
+    }
+    
+    submitForm(values) {
+        this.setState({ values })
+    }
+    
+
     render() {
         let backgroundColor;
         
@@ -45,9 +61,8 @@ class PlanComponent extends Component {
                     </ul>
                 </div>
                 
-                <div  className="getstarted-btn" 
-                //onClick="submissionForm()" @ {this.props.children}
-                >Choose This Plan ⪢</div>
+                
+                <button  onClick={this.onSubmitForm} className="getstarted-btn" >Choose This Plan ⪢</button>
             </div>
         );
     }
