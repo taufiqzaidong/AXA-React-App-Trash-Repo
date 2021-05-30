@@ -20,17 +20,23 @@ export class SensitiveData extends Component {
           
          <label for="name">
           <label>Full Name: </label>
-          <input placeholder="Enter your Full Name" maxlength="80" ></input>
+          <input onChange={handleChange('name')}
+              defaultValue={values.name}
+              placeholder="Enter your Full Name" maxlength="80" ></input>
          </label>
         
           <label for="identification_no">
             <label>NRIC</label>
-            <input type="text" placeholder="000000-00-0000" maxlength="14" ></input>
+            <input onChange={handleChange('identification_no')}
+              defaultValue={values.identification_no}
+              type="text" placeholder="000000-00-0000" maxlength="14" ></input>
           </label>
 
           <label for="dob">
           <label>Date of Birth</label>
-          <input type="text" placeholder="Day / Month / Year" readonly="" ></input>
+          <input onChange={handleChange('dob')}
+              defaultValue={values.dob}
+              type="text" placeholder="Day / Month / Year"  ></input>
           </label>
 
           <label>Gender</label>
@@ -45,12 +51,16 @@ export class SensitiveData extends Component {
 
           <label for="email">
           <label>Email address</label>
-          <input type="text" placeholder="youremail@email.com" ></input>
+          <input onChange={handleChange('email')}
+              defaultValue={values.email}
+              type="text" placeholder="youremail@email.com" ></input>
           </label>
 
           <label for="address">
           <label>Address</label>
-          <input type="text" placeholder="Address line 1" maxlength="24"></input>
+          <input onChange={handleChange('address')}
+              defaultValue={values.adress}
+              type="text" placeholder="Address line 1" maxlength="24"></input>
           </label>
 
           <label for="state">
@@ -79,12 +89,16 @@ export class SensitiveData extends Component {
 
           <label for="postcode">
           <label>Postcode</label>
-          <input type="text" placeholder="00000" maxlength="5"></input>
+          <input onChange={handleChange('postcode')}
+              defaultValue={values.postcode}
+              type="text" placeholder="00000" maxlength="5"></input>
           </label>
 
           <label for="phone">
           <label>Phone number</label>
-          <input type="text" placeholder="+60 123456789" maxlength="14" ></input>
+          <input onChange={handleChange('phone')}
+              defaultValue={values.phone}
+              type="text" placeholder="+60 123456789" maxlength="14" ></input>
           </label>
 
           <h4><span>Payment Method</span></h4>
