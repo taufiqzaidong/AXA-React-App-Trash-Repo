@@ -12,11 +12,12 @@ export class SensitiveData extends Component {
         const { values, handleChange } = this.props;
         return (
 
-        <div className={'image-wrapper2'}>
-         
+        <div className={'image-wrapper2'} >
+        <div className={'content-box'}>
+          <div className={'plan-box'}>
       <form>  
          <h4><span>Personal Details</span></h4>
-          
+        
          <label for="name">
           <label>Full Name: </label>
           <input onChange={handleChange('name')}
@@ -25,43 +26,56 @@ export class SensitiveData extends Component {
          </label>
         
           <label for="identification_no">
-            <label>NRIC</label>
+            <label>IC No.</label>
             <input onChange={handleChange('identification_no')}
               defaultValue={values.identification_no}
-              type="text" placeholder="000000-00-0000" maxlength="14" ></input>
+              type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
           </label>
-
+            <br />
+            <br />
           <label for="dob">
           <label>Date of Birth</label>
           <input onChange={handleChange('dob')}
               defaultValue={values.dob}
               type="text" placeholder="Day / Month / Year"  ></input>
           </label>
-
-          <label>Gender</label>
-          <label class="radio-label " for="male">
+          <br></br>
+            <br />
+          <label>Gender:</label>
+          
+          <label class="radio-label " for="male">Male
           <input type="radio" id="male" name="gender" value="1"></input>
           </label>
           <label class="radio-label " for="female">Female
           <input type="radio" id="female" name="gender" value="2"></input>
           </label>
-
+            <br />
+            <br />
           <h4><span>How to Contact you?</span></h4>
 
           <label for="email">
           <label>Email address</label>
+          
           <input onChange={handleChange('email')}
               defaultValue={values.email}
               type="text" placeholder="youremail@email.com" ></input>
           </label>
-
+          <br />
+          <br />
           <label for="address">
           <label>Address</label>
           <input onChange={handleChange('address')}
               defaultValue={values.adress}
-              type="text" placeholder="Address line 1" maxlength="24"></input>
+              type="text" placeholder="Address line 1" maxlength="50"></input>
           </label>
-
+          <label for="address2">
+          <label>Address</label>
+          <input onChange={handleChange('address2')}
+              defaultValue={values.adress}
+              type="text" placeholder="Address line 2" maxlength="50"></input>
+          </label>
+            <br />
+            <br />
           <label for="state">
           <label>State</label>
           <select class="sel-input">
@@ -92,16 +106,19 @@ export class SensitiveData extends Component {
               defaultValue={values.postcode}
               type="text" placeholder="00000" maxlength="5"></input>
           </label>
-
+          <br />
+          <br />
           <label for="phone">
           <label>Phone number</label>
           <input onChange={handleChange('phone')}
               defaultValue={values.phone}
               type="text" placeholder="+60 123456789" maxlength="14" ></input>
           </label>
-
+            <br />
+            <br />
           <h4><span>Payment Method</span></h4>
           <label>Payment method</label>
+          <br />
           <select class="sel-input">
                                 <option value="">Select payment method</option>
                                 <option value="2">Online Banking</option>
@@ -131,8 +148,10 @@ export class SensitiveData extends Component {
 
            <button  onClick={this.onSubmitForm} className="getstarted-btn" >Choose This Plan ⪢</button>
           </form>
+      </div>
         </div>
-          
+       
+        </div>
         );
 
 }
