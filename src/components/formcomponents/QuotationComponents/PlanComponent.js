@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
+import SensitiveData from '../../Page4components/SensitiveData';
+
 
 
 
 
 class PlanComponent extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-        };
-        this.submitForm = this.submitForm.bind(this);
-    }
-    
-    submitForm(values) {
-        this.setState({ values })
-    }
+   
+    constructor(props) {
+        super(props)
+        this.state = { isClicked: false }
+        this.handleOnClick = this.handleOnClick.bind(this);
+      }
+
+
+  handleOnClick() {
+    this.setState({ isClicked: true });
+  }
     
 
     render() {
+        
+        let userForm;
+        
+  
+        if (this.state.isClicked) {
+          userForm = <SensitiveData/> 
+          
+        }
+        else{
+            userForm = !<SensitiveData/>
+        }
+      
+
         let backgroundColor;
         
         switch(this.props.index) {
@@ -35,6 +51,7 @@ class PlanComponent extends Component {
                 break;
         }
 
+        
         return (
             <div style={{'backgroundColor': backgroundColor }} className={"individual-plan"} >
                 <div  className={'plan-header'}>{`eMedic ${this.props.plan.name}`} </div>
@@ -45,6 +62,7 @@ class PlanComponent extends Component {
                 <div style={{fontSize: 13}}   className={'plan-info'}>
                     <ul className='plan-description'>
                         <li>
+                            
                             <span>
                                 Cover for hospitalisation expenses{" "}
                                 <strong>in Malaysia only,</strong> up to
@@ -62,10 +80,13 @@ class PlanComponent extends Component {
                 </div>
                 
                 
-                <button  onClick={() => window.scrollTo(0,document.body.scrollHeight)} className="getstarted-btn" >Choose This Plan ⪢</button>
+                <button onClick={this.handleOnClick} className="getstarted-btn" >Choose This Plan</button>
+                {userForm}
             </div>
         );
     }
 }
+  
+
 
 export default PlanComponent;

@@ -24,13 +24,15 @@
 
 .content-box {
     background-color: #fff;
-    width: 500px;
-    height: 500px;
+    width: 390px;
+    height: 430px;
     border-style: solid;
-    border-radius: 25px;
-    padding: 20px;
-    top: 50%;
-    left: 50%;
+    border-radius: 50px;
+    padding: 20px 40px 20px 40px;
+    margin: 0 20px 0 20px;
+    font-size: 12px;
+    color : #1a1a1a;
+ 
    
   
  }   
@@ -42,9 +44,8 @@
     border-style: solid;
     border-radius: 25px;
     padding: 20px;
-    position: static;
-    top: 8px;
-    right: 16px;
+    top: 50%;
+    left: 50%;
  }
 
 /*.form{
@@ -172,6 +173,11 @@
         border-radius: 5px;
 
 
+    }
+
+    .form-label {
+        color : #1a1a1a;
+       font-size: 15px;
     }
 
     .plan-div {
