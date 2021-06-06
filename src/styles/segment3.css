@@ -3,7 +3,7 @@ button.choose-plan-btn{
     transform: translate(-50%, -50%) scale(1);
     white-space: nowrap;
     cursor: pointer;
-    padding: 0.6em 1.4em 0.6em 1.4em;
+    padding: 0.5em 1.8em 0.5em 1.8em;
     background-color: #7030A0;
     border-radius: 30px;
     border-color: transparent;

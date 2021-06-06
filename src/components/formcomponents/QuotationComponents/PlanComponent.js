@@ -80,7 +80,7 @@ class PlanComponent extends Component {
                 </div>
                 
                 
-                <button onClick={this.handleOnClick} className="choose-plan-btn" >Choose This Plan</button>
+                <button onClick={this.handleOnClick} className="choose-plan-btn" >Choose This Plan   ⪢</button>
                 {userForm}
             </div>
         );
