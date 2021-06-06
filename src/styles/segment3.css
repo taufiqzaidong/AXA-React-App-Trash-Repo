@@ -1,3 +1,23 @@
+button.choose-plan-btn{
+    position: relative;
+    transform: translate(-50%, -50%) scale(1);
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 0.6em 1.4em 0.6em 1.4em;
+    background-color: #7030A0;
+    border-radius: 30px;
+    border-color: transparent;
+    color: #f8f8f8;
+    transition: transform ease-out 0.2s;
+    user-select: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 ul.plan-description{
     list-style-type:'✓   ';
 }
