@@ -9,7 +9,7 @@
 }
 
 .plan-div {
-    padding: 20px 0 20px 0;
+    padding: 100px 0 20px 0;
 }
 
 .individual-plan {
@@ -77,10 +77,8 @@
 }
 
 .plan-header {
-    
     position: relative;
     text-align: center;
-    color: #1a1a1a;
     font-size: 1.5em;
 }
 
@@ -190,7 +188,7 @@
     }    
 
     .individual-plan {
-        background-color: #f8f8f8;
+        
         font-size: 20px;
         color: #1a1a1a;
         margin: 0.5em 20px 0.5em 20px;

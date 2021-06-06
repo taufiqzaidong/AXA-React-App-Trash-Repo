@@ -34,7 +34,7 @@ class PlanComponent extends Component {
         }
       
 
-        let backgroundColor;
+        let backgroundColor='#FFFFFF';
         
         switch(this.props.index) {
             case 0:
@@ -53,8 +53,8 @@ class PlanComponent extends Component {
 
         
         return (
-            <div style={{'backgroundColor': backgroundColor }} className={"individual-plan"} >
-                <div  className={'plan-header'}>{`eMedic ${this.props.plan.name}`} </div>
+            <div style={{'backgroundColor': backgroundColor}} className={"individual-plan"} >
+                <div  style={{'backgroundColor': '#7030A0','color': '#FFFFFF'}}className={'plan-header'}>{`eMedic ${this.props.plan.name}`} </div>
                 <div className={'plan-price'}>RM {this.props.basePriceMonthly}<span>/month</span></div>
                <div style={{fontSize: 15}} className={'plan-annual-limit'}>
                     with {`RM${this.props.plan["annual_limit"].toLocaleString()}`} annual limit
