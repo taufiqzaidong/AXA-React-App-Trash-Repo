@@ -69,3 +69,5 @@ class PlanComponent extends Component {
 }
 
 export default PlanComponent;
+//{{ showUserForm && <UserForm></UserForm>}}
+//{{ !showUserForm && <Plan></Plan>}}
