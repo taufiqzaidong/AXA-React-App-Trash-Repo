@@ -1,83 +1,55 @@
-
 import React, { Component } from 'react'
 
 export class SensitiveData extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-      };
+  state = {
+    name :'',
+    dob : '',
+    identification_no : '',
+    email : '',
+    phone : '',
+    gender : '',
+    is_citizen : '',
+    
+};
+      
     render() {
       
-        const { values, handleChange } = this.props;
         return (
-
-        <div className={'image-wrapper2'} >
+          <div>
+          <p1>Your Medical Card Information</p1> 
+            
         <div className={'content-box'}>
-          <div className={'plan-box'}>
+          
+        <div >
       <form>  
-         <h4><span>Personal Details</span></h4>
+         <h4  ><span>Personal Details</span></h4> 
         
-         <label for="name">
-          <label>Full Name: </label>
-          <input onChange={handleChange('name')}
-              defaultValue={values.name}
-              placeholder="Enter your Full Name" maxlength="80" ></input>
-         </label>
+         <table >
+         <tr/> <label  >Full Name: </label> 
+          <td/><input placeholder="Enter your Full Name" maxlength="80" ></input>
         
-          <label for="identification_no">
-            <label>IC No.</label>
-            <input onChange={handleChange('identification_no')}
-              defaultValue={values.identification_no}
-              type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
-          </label>
-            <br />
-            <br />
-          <label for="dob">
-          <label>Date of Birth</label>
-          <input onChange={handleChange('dob')}
-              defaultValue={values.dob}
-              type="text" placeholder="Day / Month / Year"  ></input>
-          </label>
-          <br></br>
-            <br />
-          <label>Gender:</label>
-          
-          <label class="radio-label " for="male">Male
-          <input type="radio" id="male" name="gender" value="1"></input>
-          </label>
-          <label class="radio-label " for="female">Female
-          <input type="radio" id="female" name="gender" value="2"></input>
-          </label>
-            <br />
-            <br />
-          <h4><span>How to Contact you?</span></h4>
+          <td/>  <label  >IC No:</label>
+          <td/>  <input type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
+            </table>
 
-          <label for="email">
-          <label>Email address</label>
+            <br />
           
-          <input onChange={handleChange('email')}
-              defaultValue={values.email}
-              type="text" placeholder="youremail@email.com" ></input>
-          </label>
+          <label  >Date of Birth:</label> <br/>
+          <input type="text" placeholder="Day / Month / Year"  ></input>
+          
+         
+          <br/>
           <br />
-          <br />
-          <label for="address">
-          <label>Address</label>
-          <input onChange={handleChange('address')}
-              defaultValue={values.adress}
-              type="text" placeholder="Address line 1" maxlength="50"></input>
-          </label>
-          <label for="address2">
-          <label>Address</label>
-          <input onChange={handleChange('address2')}
-              defaultValue={values.adress}
-              type="text" placeholder="Address line 2" maxlength="50"></input>
-          </label>
+          <label  >Address: </label> <br/>
+          <input type="text" placeholder="Address line 2" size="50"></input><br/>
+  
+          <input type="text" placeholder="Address line 2" size="50"></input>
+          
             <br />
             <br />
-          <label for="state">
-          <label>State</label>
+
+          <label  >State:</label>
           <select class="sel-input">
                                 <option value="">Select a state</option>
                                 <option value="1">Johor</option>
@@ -97,36 +69,30 @@ export class SensitiveData extends Component {
                                 <option value="15">WP Labuan</option>
                                 <option value="16">WP Putrajaya</option>
             </select>
-          </label>
+       
 
 
-          <label for="postcode">
-          <label>Postcode</label>
-          <input onChange={handleChange('postcode')}
-              defaultValue={values.postcode}
+          <label  >Postcode:</label>
+          <input 
               type="text" placeholder="00000" maxlength="5"></input>
-          </label>
+
+              <br/>
+              <br/>
+
+         
+
+          <h4 > <span>Payment Information</span></h4>
+<table>
+         <tr/> <label className="font-label"  >Payment method:</label>
           <br />
-          <br />
-          <label for="phone">
-          <label>Phone number</label>
-          <input onChange={handleChange('phone')}
-              defaultValue={values.phone}
-              type="text" placeholder="+60 123456789" maxlength="14" ></input>
-          </label>
-            <br />
-            <br />
-          <h4><span>Payment Method</span></h4>
-          <label>Payment method</label>
-          <br />
-          <select class="sel-input">
+          <td/><select class="sel-input">
                                 <option value="">Select payment method</option>
                                 <option value="2">Online Banking</option>
                                 <option value="3">Credit Card</option>
           </select>
-
-          <label>Online banking</label>
-          <select class="sel-input">
+          <br/>
+         <td/> <label  >Online banking:</label> <br/>
+         <td/> <select class="sel-input">
                                 <option value="">Select bank</option>
                                 <option value="1">AffinOnline</option>
                                 <option value="2">Alliance Online</option>
@@ -145,13 +111,37 @@ export class SensitiveData extends Component {
                                 <option value="17">Standard Chartered Bank</option>
                                 <option value="18">UOB</option>
            </select><br></br>
+           </table>
+        
+       
 
-           <button  onClick={this.onSubmitForm} className="getstarted-btn" >Choose This Plan ⪢</button>
+          <h4  ><span>Payment Method</span></h4>
+
+        <table >
+         <tr/> <label  >Email address:</label><br/>
+          
+        <td/>  <input type="text" placeholder="youremail@email.com" ></input><br/>
+        
+         <td/> <label  >Confirm Email address:</label><br/>
+          
+         <td/> <input type="text" placeholder="youremail@email.com" ></input>
+          <br />
+
+          </table>
+         
+          <label  >Phone number:</label> <br/>
+          <input 
+              type="text" placeholder="+60 123456789" maxlength="14" ></input>
+       
+            <br />
+            <br />
+
           </form>
       </div>
         </div>
-       
         </div>
+        
+       
         );
 
 }
