@@ -2,18 +2,97 @@ import React, { Component } from 'react'
 
 export class SensitiveData extends Component {
 
-  state = {
-    name :'',
-    dob : '',
-    identification_no : '',
-    email : '',
-    phone : '',
-    gender : '',
-    is_citizen : '',
+ 
+
+  constructor(props) {
+    super(props);
+
     
-};
+    
+    
+    this.state = {  
+                name :'',
+                dob : '',
+                identification_no : '',
+                email : '',
+                phone : '',
+                gender : '',
+                is_citizen : '',
+                plan_detail_id : '',
+                is_heavymachineworker : '',
+                address_1 : '',
+                postcode : '',
+                state_id : '',
+                   }; 
+
+                }
+
+                  
+                async loginToAPI() {
+                  let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/login';
+                  let response = await fetch(url, {
+                      method: 'POST',
+                      headers: {
+                          Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
+                          'Content-Type': 'application/json',
+                      }
+                  });
+          
+                  let commits = await response.json();
+                          
+                  return commits.token
+              }
+
+      handleChange = (event) => {
+        this.setState({
+          
+          name: event.target.value,
+          dob : event.target.value
+        
+        });
+                }
+
+      handleSubmit = (event) => {
+
+          fetch('https://medical-api-uat.learnmyprotection.com/api/v1/orders', {
+            method: 'POST',
+            headers: {
+              Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
+              'Content-Type': 'application/json',
+              'x-access-token' : 'accessToken',
+          }
+          
+          })
+          body: JSON.stringify(this.state)
+          .then(function(response) {
+            console.log(response)
+            return response.json();
+          });
+    
+        event.preventDefault();
+    } 
+
+/* async CreateIndividualOrder() {
+let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/orders';
+let accessToken = await this.loginToAPI();
+let response = await fetch(url, {
+method: 'POST',
+headers: {
+    
+    Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
+    'Content-Type': 'application/json',
+    'x-access-token' : accessToken
+}
+});
+
+let commits = await response.json();
+    
+return commits.token
+} */
+
       
     render() {
+
       
         return (
           <div>
@@ -23,25 +102,25 @@ export class SensitiveData extends Component {
           
         <div >
       <form>  
-         <h4  ><span>Personal Details</span></h4> 
+         <div ><h4  ><span>Personal Details</span></h4> </div>
         
          <table >
-         <tr/> <label  >Full Name: </label> 
-          <td/><input placeholder="Enter your Full Name" maxlength="80" ></input>
+         <tr/> <label  >NAME: </label> 
+          <td/><input   placeholder="Enter your Full Name" maxlength="80" ></input>
         
-          <td/>  <label  >IC No:</label>
-          <td/>  <input type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
+          <td/>  <label  >IC NO:</label>
+          <td/>  <input  type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
             </table>
 
             <br />
           
-          <label  >Date of Birth:</label> <br/>
-          <input type="text" placeholder="Day / Month / Year"  ></input>
+          <label  >Date of Birth:</label> 
+          <input type="date" placeholder="Day / Month / Year"  ></input>
           
          
           <br/>
           <br />
-          <label  >Address: </label> <br/>
+          <label  >ADDRESS: </label> <br/>
           <input type="text" placeholder="Address line 2" size="50"></input><br/>
   
           <input type="text" placeholder="Address line 2" size="50"></input>
@@ -49,7 +128,7 @@ export class SensitiveData extends Component {
             <br />
             <br />
 
-          <label  >State:</label>
+          <label  >STATE:</label>
           <select class="sel-input">
                                 <option value="">Select a state</option>
                                 <option value="1">Johor</option>
@@ -72,7 +151,7 @@ export class SensitiveData extends Component {
        
 
 
-          <label  >Postcode:</label>
+          <label  >POSTCODE:</label>
           <input 
               type="text" placeholder="00000" maxlength="5"></input>
 
@@ -83,7 +162,7 @@ export class SensitiveData extends Component {
 
           <h4 > <span>Payment Information</span></h4>
 <table>
-         <tr/> <label className="font-label"  >Payment method:</label>
+         <tr/> <label className="font-label"  >PAYMENT METHOD:</label>
           <br />
           <td/><select class="sel-input">
                                 <option value="">Select payment method</option>
@@ -91,7 +170,7 @@ export class SensitiveData extends Component {
                                 <option value="3">Credit Card</option>
           </select>
           <br/>
-         <td/> <label  >Online banking:</label> <br/>
+         <td/> <label  >BANK:</label> <br/>
          <td/> <select class="sel-input">
                                 <option value="">Select bank</option>
                                 <option value="1">AffinOnline</option>
@@ -118,23 +197,24 @@ export class SensitiveData extends Component {
           <h4  ><span>Payment Method</span></h4>
 
         <table >
-         <tr/> <label  >Email address:</label><br/>
+         <tr/> <label  >EMAIL ADDRESS:</label><br/>
           
         <td/>  <input type="text" placeholder="youremail@email.com" ></input><br/>
         
-         <td/> <label  >Confirm Email address:</label><br/>
+         <td/> <label  >CONFIRM EMAIL ADDRESS:</label><br/>
           
          <td/> <input type="text" placeholder="youremail@email.com" ></input>
           <br />
 
           </table>
          
-          <label  >Phone number:</label> <br/>
+          <label  >PHONE NO:</label> <br/>
           <input 
               type="text" placeholder="+60 123456789" maxlength="14" ></input>
        
             <br />
             <br />
+            <button onClick={this.continue} >Submit</button>
 
           </form>
       </div>
