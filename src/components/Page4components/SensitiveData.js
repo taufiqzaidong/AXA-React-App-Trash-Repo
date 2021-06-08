@@ -93,16 +93,32 @@ return commits.token
       
     render() {
 
+     let backgroundColor='#FFFFFF';
+      
+      switch(this.props.index) {
+        case 0:
+            backgroundColor = '#FFFFFF'
+            break;
+        case 1:
+            backgroundColor = "#FFFFFF"
+            break;
+        case 2:
+            backgroundColor = '#FFFFFF'
+            break;
+        default:
+            backgroundColor= '#FFFFFF'
+            break; 
+    }
+
       
         return (
-          <div>
-          <p1>Your Medical Card Information</p1> 
-            
-        <div className={'content-box'}>
+
           
-        <div >
+           
+        <div className={'content-box'}>
+        <div className={'left-box'}>
       <form>  
-         <div ><h4  ><span>Personal Details</span></h4> </div>
+         <div ><center><h2  ><span>Personal Details</span></h2><br/> <br/></center></div>
         
          <table >
          <tr/> <label  >NAME: </label> 
@@ -113,16 +129,17 @@ return commits.token
             </table>
 
             <br />
+            
           
-          <label  >Date of Birth:</label> 
+          <label  >DATE OF BIRTH:</label> <br/>
           <input type="date" placeholder="Day / Month / Year"  ></input>
           
          
           <br/>
           <br />
           <label  >ADDRESS: </label> <br/>
-          <input type="text" placeholder="Address line 2" size="50"></input><br/>
-  
+          <input type="text" placeholder="Address line 1" size="50"></input><br/>
+          <br/>
           <input type="text" placeholder="Address line 2" size="50"></input>
           
             <br />
@@ -160,7 +177,7 @@ return commits.token
 
          
 
-          <h4 > <span>Payment Information</span></h4>
+       <h4> <span>Payment Information</span></h4> 
 <table>
          <tr/> <label className="font-label"  >PAYMENT METHOD:</label>
           <br />
@@ -214,12 +231,45 @@ return commits.token
        
             <br />
             <br />
-            <button onClick={this.continue} >Submit</button>
-
+           
           </form>
-      </div>
+          
+          </div>
+          <div className={'right-box'}>
+            <center><h2>Your Plan</h2></center>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div ><center><h1>{`eMedic Plan`} </h1></center></div>
+            
+                    <div className={'plan-info'} style={{fontSize: 13}}>
+                        <ul className='plan-description'>
+                            <li>
+                                <span>
+                                    Cover for hospitalisation expenses{" "}
+                                    <strong>in Malaysia only,</strong> up to
+                                    RM{`XX`}, including surgery, ambulance, ICU and
+                                    prescription drugs<br/><br/>
+                                </span>
+                            </li>
+                            <li>
+                                Cashless admission to <a href="https://www.axa.com.my/hospital-panel-life" target="_blank">AXA panel hospitals</a><br/><br/>
+                            </li>
+                            <li>
+                                Cover for room and board up to RM250 a day (choose any room type that is available within this budget)
+                            </li>
+                        </ul> <br/><br/>
+                        <div style = {{color:'blue'}}><h4>eMedic Annual Limit</h4></div>
+                        <br/>
+                        <div style = {{color:'blue'}}><center><h1>RM XX,XXX</h1></center></div>
+                </div><br/>
+                <button>Change Plan</button>
+                <button>Proceed</button>
+          </div>
         </div>
-        </div>
+        
+        
         
        
         );

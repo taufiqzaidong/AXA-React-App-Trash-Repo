@@ -25,8 +25,7 @@ export class UserForm extends Component {
           render() {
            
                 return (
-                  <SensitiveData
-                  />
+                  <SensitiveData/>
                 );
             
             
