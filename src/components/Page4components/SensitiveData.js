@@ -264,8 +264,10 @@ return commits.token
                         <br/>
                         <div style = {{color:'blue'}}><center><h1>RM XX,XXX</h1></center></div>
                 </div><br/>
-                <button>Change Plan</button>
-                <button>Proceed</button>
+                <center>
+                <button className = {'submit-btn'}>Change Plan</button>
+                <button className = {'change-btn'}>Submit</button>
+                </center>
           </div>
         </div>
         

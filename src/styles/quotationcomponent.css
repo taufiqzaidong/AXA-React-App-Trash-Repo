@@ -152,7 +152,31 @@
     background-color: #f8f8f8;
     display: inline-block;
     cursor: pointer;
-   
+}
+
+.submit-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #6164f3;
+    display: inline-block;
+    color : white;
+    cursor: pointer;
+}
+.change-btn {
+    position: absolute;
+    left: 58%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #6164f3;
+    display: inline-block;
+    color : white;
+    cursor: pointer;
 }
 
 .getstarted-btn {
