@@ -19,10 +19,9 @@
     height: 450px;
     border-style: solid;
     border-radius:33px 33px 33px 33px;
-    margin: 0 20px 0 20px;
+    margin: 0 0 0 250px ;
     font-size: 12px;
     color : #1a1a1a;
-    padding : 0 0 0 0 
   
  }   
 
@@ -156,7 +155,7 @@
 
 .submit-btn {
     position: absolute;
-    left: 50%;
+    left: 67%;
     transform: translateX(-50%);
     text-align: center;
     padding: 10px 20px 10px 20px;
@@ -168,7 +167,7 @@
 }
 .change-btn {
     position: absolute;
-    left: 58%;
+    left: 75%;
     transform: translateX(-50%);
     text-align: center;
     padding: 10px 20px 10px 20px;

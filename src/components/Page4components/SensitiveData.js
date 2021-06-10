@@ -7,9 +7,6 @@ export class SensitiveData extends Component {
   constructor(props) {
     super(props);
 
-    
-    
-    
     this.state = {  
                 name :'',
                 dob : '',
@@ -27,7 +24,12 @@ export class SensitiveData extends Component {
 
                 }
 
-                  
+                back = e => {
+                  e.preventDefault();
+                  this.props.prevStep();
+                };
+
+             /*     
                 async loginToAPI() {
                   let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/login';
                   let response = await fetch(url, {
@@ -70,7 +72,7 @@ export class SensitiveData extends Component {
           });
     
         event.preventDefault();
-    } 
+    } */
 
 /* async CreateIndividualOrder() {
 let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/orders';
@@ -93,31 +95,18 @@ return commits.token
       
     render() {
 
-     let backgroundColor='#FFFFFF';
-      
-      switch(this.props.index) {
-        case 0:
-            backgroundColor = '#FFFFFF'
-            break;
-        case 1:
-            backgroundColor = "#FFFFFF"
-            break;
-        case 2:
-            backgroundColor = '#FFFFFF'
-            break;
-        default:
-            backgroundColor= '#FFFFFF'
-            break; 
-    }
+     
 
       
         return (
 
           
-           
+           <div className={'image-wrapper2 '}>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div className={'content-box'}>
+        
         <div className={'left-box'}>
-      <form>  
+      
          <div ><center><h2  ><span>Personal Details</span></h2><br/> <br/></center></div>
         
          <table >
@@ -232,10 +221,11 @@ return commits.token
             <br />
             <br />
            
-          </form>
+          
           
           </div>
           <div className={'right-box'}>
+            
             <center><h2>Your Plan</h2></center>
             <br/>
             <br/>
@@ -265,10 +255,11 @@ return commits.token
                         <div style = {{color:'blue'}}><center><h1>RM XX,XXX</h1></center></div>
                 </div><br/>
                 <center>
-                <button className = {'submit-btn'}>Change Plan</button>
+                <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
                 <button className = {'change-btn'}>Submit</button>
                 </center>
           </div>
+        </div>
         </div>
         
         

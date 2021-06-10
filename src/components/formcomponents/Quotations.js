@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import SensitiveData from '../Page4components/SensitiveData';
 import PlanComponent from './QuotationComponents/PlanComponent';
 
 
 class Quotations extends Component {
     constructor(props) {
         super(props);
-        this.state = {containedCount: 0};
+        this.state = {containedCount: 0,
+            step: 1};
     }
+
+  // Proceed to next step
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    });
+  };
+
+  // Go back to prev step
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1
+    });
+  };
 
     calculateAge() {
         let birthDate = new Date(parseInt(this.props['date-of-birth']['year']), parseInt(this.props['date-of-birth']['month']), parseInt(this.props['date-of-birth']['day']));
@@ -100,7 +118,12 @@ class Quotations extends Component {
 
     render() {
 
+        const { step } = this.state
+
+        switch (step) {
+            case 1:
         return (
+            
             <div className="form-component-quote">
                 <div
                     className="form-header-wrapper"
@@ -132,8 +155,7 @@ class Quotations extends Component {
                 </div>
                 
                 <div className="plan-div">
-                    {this.state.data
-                        ? this.state.data.map((individualPlan, index) => (
+                    {this.state.data ? this.state.data.map((individualPlan, index) => (
                                 <PlanComponent
                                     key={individualPlan["plan_detail_id"]}
                                     basePriceMonthly={
@@ -144,12 +166,23 @@ class Quotations extends Component {
                                     }
                                     plan={individualPlan["plan"]}
                                     index={index}
+                                    nextStep={this.nextStep}
                                 />
                             ))
                         : null}
                 </div>
             </div>
-        );
+        )
+        case 2: 
+        return (
+            <SensitiveData
+            nextStep={this.nextStep}
+            prevStep={this.prevStep} />
+        )
+        default :
+        return <h1>lol</h1>
+                                }
+                                
     }
 }
 

@@ -2,36 +2,35 @@ import React, { Component } from 'react';
 import SensitiveData from '../../Page4components/SensitiveData';
 
 
-
-
-
 class PlanComponent extends Component {
 
+    continue = e => {
+        this.props.nextStep();
+      };
    
     constructor(props) {
         super(props)
-        this.state = { isClicked: false }
-        this.handleOnClick = this.handleOnClick.bind(this);
+        //this.state = { isClicked: false }
+        //this.handleOnClick = this.handleOnClick.bind(this);
+        
       }
 
 
-  handleOnClick() {
+  /*handleOnClick() {
     this.setState({ isClicked: true });
-  }
+  }*/
     
 
     render() {
-        
+        /*
         let userForm;
         
   
         if (this.state.isClicked) {
           userForm = <SensitiveData/> 
           
-        }
-        else{
-            userForm = !<SensitiveData/>
-        }
+        }*/
+        
       
 
         let backgroundColor='#FFFFFF';
@@ -79,8 +78,8 @@ class PlanComponent extends Component {
                         </ul>
                 </div><br/>
                 <div>
-                    <button onClick={this.handleOnClick} className="choose-plan-btn" >Choose This Plan   ⪢</button>
-                    {userForm}
+                    <button  onClick={this.continue}className="choose-plan-btn" >Choose This Plan   ⪢</button>
+                    
                 </div>
             </div>
             
@@ -91,5 +90,3 @@ class PlanComponent extends Component {
 
 
 export default PlanComponent;
-//{{ showUserForm && <UserForm></UserForm>}}
-//{{ !showUserForm && <Plan></Plan>}}

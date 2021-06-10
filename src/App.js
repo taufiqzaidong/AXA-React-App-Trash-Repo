@@ -35,7 +35,7 @@ class App extends Component {
                 <Page2 />
                 <Page3 />
                 <Form curRef={this.someRef}/>
-                <UserForm/>
+               
             
             </div>
         );
