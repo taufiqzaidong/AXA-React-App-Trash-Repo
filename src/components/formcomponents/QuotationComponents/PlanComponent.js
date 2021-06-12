@@ -52,6 +52,7 @@ class PlanComponent extends Component {
 
         
         return (
+            
             <div className={"individual-plan"} style={{'backgroundColor': backgroundColor}}>
                 <div  className={'plan-header'} style={{'color': '#FFFFFF'}}>{`eMedic ${this.props.plan.name}`} </div>
             
@@ -78,7 +79,7 @@ class PlanComponent extends Component {
                         </ul>
                 </div><br/>
                 <div>
-                    <button  onClick={this.continue}className="choose-plan-btn" >Choose This Plan   ⪢</button>
+                    <button  onClick={this.continue} className="choose-plan-btn" >Choose This Plan   ⪢</button>
                     
                 </div>
             </div>

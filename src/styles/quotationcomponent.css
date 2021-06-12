@@ -25,6 +25,37 @@
   
  }   
 
+ .form-box {
+    background-color: #fff;
+    width:800px;
+    height: 350px;
+    border-style: solid;
+    border-radius:33px 33px 0 0;
+    margin: 0 0 0 320px ;
+    font-size: 12px;
+    color : #1a1a1a;
+  
+ }   
+
+ .top-box {
+    float:top;
+    height:30px;
+    width: 800px;
+    margin:0;
+    border-radius: 100px 100px 0 0;
+    background-color: rgb(138, 116, 238);
+    
+}
+
+    .middle-box{
+        float:top;
+        height:30px;
+        width: 800px;
+        margin:0;
+        border-radius: 0 0 0 0;
+        background-color: rgb(138, 116, 238);
+    }
+
     .left-box {
         float:left;
         height:30px;
@@ -53,6 +84,18 @@
     top: 50%;
     left: 50%;
  }
+
+ .table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+ }
+
+ td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
 
 /*.form{
     margin: 35px;

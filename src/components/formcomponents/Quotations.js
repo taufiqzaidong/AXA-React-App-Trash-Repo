@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ConfirmData from '../Page4components/ConfirmData';
 import SensitiveData from '../Page4components/SensitiveData';
 import PlanComponent from './QuotationComponents/PlanComponent';
 
@@ -7,10 +8,22 @@ class Quotations extends Component {
     constructor(props) {
         super(props);
         this.state = {containedCount: 0,
-            step: 1};
+                      step: 1,
+                      name :'',
+                      dob : '',
+                      identification_no : '',
+                      email : '',
+                      phone : '',
+                      gender : '',
+                      is_citizen : '',
+                      plan_detail_id : '',
+                      is_heavymachineworker : '',
+                      address_1 : '',
+                      postcode : '',
+                      state_id : '' ,
+                      address_2 : ''};
     }
 
-  // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -18,12 +31,15 @@ class Quotations extends Component {
     });
   };
 
-  // Go back to prev step
   prevStep = () => {
     const { step } = this.state;
     this.setState({
       step: step - 1
     });
+  };
+
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
   };
 
     calculateAge() {
@@ -119,6 +135,8 @@ class Quotations extends Component {
     render() {
 
         const { step } = this.state
+        const { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id, address_2 } = this.state;
+        const values = { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id , address_2};
 
         switch (step) {
             case 1:
@@ -167,6 +185,8 @@ class Quotations extends Component {
                                     plan={individualPlan["plan"]}
                                     index={index}
                                     nextStep={this.nextStep}
+                                    handleChange={this.handleChange}
+                                    values={values}
                                 />
                             ))
                         : null}
@@ -175,9 +195,19 @@ class Quotations extends Component {
         )
         case 2: 
         return (
+          
             <SensitiveData
             nextStep={this.nextStep}
-            prevStep={this.prevStep} />
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values} /> 
+        )
+        case 3: 
+        return (
+            <ConfirmData
+            nextStep={this.nextStep}
+            prevStep={this.prevStep} 
+            values={values}/>
         )
         default :
         return <h1>lol</h1>

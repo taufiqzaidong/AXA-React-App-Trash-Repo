@@ -6,26 +6,15 @@ export class SensitiveData extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {  
-                name :'',
-                dob : '',
-                identification_no : '',
-                email : '',
-                phone : '',
-                gender : '',
-                is_citizen : '',
-                plan_detail_id : '',
-                is_heavymachineworker : '',
-                address_1 : '',
-                postcode : '',
-                state_id : '',
-                   }; 
+ 
 
                 }
 
+                continue = e => {
+                  this.props.nextStep();
+                };
+
                 back = e => {
-                  e.preventDefault();
                   this.props.prevStep();
                 };
 
@@ -95,6 +84,7 @@ return commits.token
       
     render() {
 
+      const { values , handleChange } = this.props;
      
 
       
@@ -102,6 +92,7 @@ return commits.token
 
           
            <div className={'image-wrapper2 '}>
+             
             <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div className={'content-box'}>
         
@@ -111,31 +102,37 @@ return commits.token
         
          <table >
          <tr/> <label  >NAME: </label> 
-          <td/><input   placeholder="Enter your Full Name" maxlength="80" ></input>
+          <td/><input onChange={handleChange('name')}
+              defaultValue={values.name}  placeholder="Enter your Full Name" maxlength="80" ></input>
         
           <td/>  <label  >IC NO:</label>
-          <td/>  <input  type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
+          <td/>  <input  onChange={handleChange('identification_no')}
+              defaultValue={values.identification_no} type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
             </table>
 
             <br />
             
           
           <label  >DATE OF BIRTH:</label> <br/>
-          <input type="date" placeholder="Day / Month / Year"  ></input>
+          <input onChange={handleChange('dob')}
+              defaultValue={values.dob} type="date" placeholder="Day / Month / Year"  ></input>
           
          
           <br/>
           <br />
           <label  >ADDRESS: </label> <br/>
-          <input type="text" placeholder="Address line 1" size="50"></input><br/>
+          <input onChange={handleChange('address_1')}
+              defaultValue={values.address_1}  type="text" placeholder="Address line 1" size="50"></input><br/>
           <br/>
-          <input type="text" placeholder="Address line 2" size="50"></input>
+          <input onChange={handleChange('address_2')}
+              defaultValue={values.address_2} type="text" placeholder="Address line 2" size="50"></input>
           
             <br />
             <br />
 
           <label  >STATE:</label>
-          <select class="sel-input">
+          <select onChange={handleChange('state_id')}
+              defaultValue={values.state_id}  class="sel-input">
                                 <option value="">Select a state</option>
                                 <option value="1">Johor</option>
                                 <option value="2">Kedah</option>
@@ -158,7 +155,8 @@ return commits.token
 
 
           <label  >POSTCODE:</label>
-          <input 
+          <input onChange={handleChange('postcode')}
+              defaultValue={values.postcode} 
               type="text" placeholder="00000" maxlength="5"></input>
 
               <br/>
@@ -205,7 +203,8 @@ return commits.token
         <table >
          <tr/> <label  >EMAIL ADDRESS:</label><br/>
           
-        <td/>  <input type="text" placeholder="youremail@email.com" ></input><br/>
+        <td/>  <input onChange={handleChange('email')}
+              defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input><br/>
         
          <td/> <label  >CONFIRM EMAIL ADDRESS:</label><br/>
           
@@ -215,7 +214,8 @@ return commits.token
           </table>
          
           <label  >PHONE NO:</label> <br/>
-          <input 
+          <input onChange={handleChange('phone')}
+              defaultValue={values.phone}
               type="text" placeholder="+60 123456789" maxlength="14" ></input>
        
             <br />
@@ -256,7 +256,7 @@ return commits.token
                 </div><br/>
                 <center>
                 <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
-                <button className = {'change-btn'}>Submit</button>
+                <button onClick={this.continue} className = {'change-btn'}>Submit</button>
                 </center>
           </div>
         </div>
