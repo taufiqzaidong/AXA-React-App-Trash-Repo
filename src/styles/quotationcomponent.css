@@ -12,6 +12,10 @@
     padding: 100px 0 20px 0;
 }
 
+.user-div {
+    padding: 100px 0 20px 0;
+}
+
 
 .content-box {
     background-color: #fff;
@@ -279,6 +283,15 @@
         left: 50%;
         transform: translateX(-50%);
     }    
+    
+    .user-div {
+        padding: 20px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }   
 
     .individual-plan {
         

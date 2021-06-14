@@ -193,15 +193,40 @@ class Quotations extends Component {
                 </div>
             </div>
         )
+
+
         case 2: 
         return (
-          
+            <div  >
+           
+                <div >
+                     <div className="form-header">
+                        <div >
+                            {this.props.backButton}
+                        </div> 
+                        <h1>Enter your sensitive Data</h1>             
+                    </div>              
+                </div>
+           
+            
+                <div className="plan-div">
+                
+                {this.state.data.map((individualPlan) => (
+                          
             <SensitiveData
+            basePriceMonthly={individualPlan["base_price_monthly"]}
+            plan={individualPlan["plan"]}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             values={values} /> 
+
+            ))}
+    </div>
+</div>
         )
+
+
         case 3: 
         return (
             <ConfirmData
@@ -209,6 +234,8 @@ class Quotations extends Component {
             prevStep={this.prevStep} 
             values={values}/>
         )
+
+
         default :
         return <h1>lol</h1>
                                 }

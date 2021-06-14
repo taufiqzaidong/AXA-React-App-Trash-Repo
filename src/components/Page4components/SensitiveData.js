@@ -92,8 +92,8 @@ return commits.token
 
           
            <div className={'image-wrapper2 '}>
-             
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+             <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+           
         <div className={'content-box'}>
         
         <div className={'left-box'}>
@@ -231,7 +231,7 @@ return commits.token
             <br/>
             <br/>
             <br/>
-            <div ><center><h1>{`eMedic Plan`} </h1></center></div>
+            <div ><center><h1>{`eMedic ${this.props.plan.name}`}  </h1></center></div>
             
                     <div className={'plan-info'} style={{fontSize: 13}}>
                         <ul className='plan-description'>
@@ -247,12 +247,12 @@ return commits.token
                                 Cashless admission to <a href="https://www.axa.com.my/hospital-panel-life" target="_blank">AXA panel hospitals</a><br/><br/>
                             </li>
                             <li>
-                                Cover for room and board up to RM250 a day (choose any room type that is available within this budget)
+                                Cover for room and board up to RM{` ${this.props.plan["annual_limit"].toLocaleString()}`} a day (choose any room type that is available within this budget)
                             </li>
                         </ul> <br/><br/>
                         <div style = {{color:'blue'}}><h4>eMedic Annual Limit</h4></div>
                         <br/>
-                        <div style = {{color:'blue'}}><center><h1>RM XX,XXX</h1></center></div>
+                        <div style = {{color:'blue'}}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
                 </div><br/>
                 <center>
                 <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
