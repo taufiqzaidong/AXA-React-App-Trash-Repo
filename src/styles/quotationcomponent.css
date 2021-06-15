@@ -1,3 +1,19 @@
+.your-plan-txt{
+    border-top-left-radius: 50px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+
+}
+
+.personal-details-txt{
+    border-top-left-radius: 50px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+
+}
+
 .form-component-quote {
     font-size: 3em;
     font-family: 'Montserrat', sans-serif;
@@ -18,10 +34,10 @@
 
 
 .content-box {
-    background-color: #fff;
-    width:1000px;
+    background-color: #F2F2F2;
+    width:1200px;
     height: 450px;
-    border-style: solid;
+    border-color: transparent;
     border-radius:33px 33px 33px 33px;
     margin: 0 0 0 250px ;
     font-size: 12px;
@@ -63,7 +79,7 @@
     .left-box {
         float:left;
         height:30px;
-        width: 500px;
+        width: 700px;
         margin:0;
         border-radius: 100px 0 0 0;
         background-color: rgb(138, 116, 238);

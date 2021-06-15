@@ -98,7 +98,7 @@ return commits.token
         
         <div className={'left-box'}>
       
-         <div ><center><h2  ><span>Personal Details</span></h2><br/> <br/></center></div>
+        <div className={'personal-details-txt'}style={{fontWeight:500}}><center><span>Personal Details</span><br/> <br/></center></div>
         
          <table >
          <tr/> <label  >NAME: </label> 
@@ -226,7 +226,7 @@ return commits.token
           </div>
           <div className={'right-box'}>
             
-            <center><h2>Your Plan</h2></center>
+            <div className={'your-plan-txt'}style={{fontWeight:500}}><center><span>Your Plan</span></center></div>
             <br/>
             <br/>
             <br/>
