@@ -1,3 +1,41 @@
+.payment-method-sgmnt{
+    width: 700px;
+    border-right: 5px solid;
+    border-right-color: #FBBBB4;
+    text-indent:30px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #7030A0;
+}
+
+.payment-method-table{
+    border-right: 5px solid;
+    border-right-color: #FBBBB4;
+    width: 700px;
+}
+
+.personal-details-table{
+    border-right: 5px solid;
+    border-right-color: #FBBBB4;
+    width: 700px;
+}
+
+.payment-information-sgmnt{
+    width: 700px;
+    border-right: 5px solid;
+    border-right-color: #FBBBB4;
+    text-indent:30px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #7030A0;
+}
+.payment-info-table{
+    border-right: 5px solid;
+    border-right-color: #FBBBB4;
+    width: 700px;
+}
 .your-plan-txt{
     border-top-left-radius: 50px;
     font-size: 1.5em;
@@ -7,11 +45,11 @@
 }
 
 .personal-details-txt{
+    text-indent:30px;
     border-top-left-radius: 50px;
     font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
     color: white;
-
 }
 
 .form-component-quote {
@@ -35,7 +73,7 @@
 
 .content-box {
     background-color: #F2F2F2;
-    width:1200px;
+    width:1205px;
     height: 450px;
     border-color: transparent;
     border-radius:33px 33px 33px 33px;
@@ -63,7 +101,7 @@
     width: 800px;
     margin:0;
     border-radius: 100px 100px 0 0;
-    background-color: rgb(138, 116, 238);
+    background-color: #7030A0;
     
 }
 
@@ -73,25 +111,28 @@
         width: 800px;
         margin:0;
         border-radius: 0 0 0 0;
-        background-color: rgb(138, 116, 238);
+        background-color: #7030A0;
     }
 
     .left-box {
+        border-right: 5px solid;
+        border-right-color: #FBBBB4;
         float:left;
         height:30px;
         width: 700px;
         margin:0;
-        border-radius: 100px 0 0 0;
-        background-color: rgb(138, 116, 238);
+        border-radius: 50px 0 0 0;
+        background-color: #7030A0;
         
  }
+
     .right-box {
 
         float:right;
         height:30px;
         width: 500px;
         border-radius: 0 100px 0 0;
-        background-color: rgb(138, 116, 238);
+        background-color: #7030A0;
     }
 
  .plan-box {

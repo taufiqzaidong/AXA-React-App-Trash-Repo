@@ -98,8 +98,9 @@ return commits.token
         
         <div className={'left-box'}>
       
-        <div className={'personal-details-txt'}style={{fontWeight:500}}><center><span>Personal Details</span><br/> <br/></center></div>
-        
+        <div className={'personal-details-txt'}style={{fontWeight:500}}>Personal Details</div>
+        <div className={'personal-details-table'}>
+        <br/> <br/>
          <table >
          <tr/> <label  >NAME: </label> 
           <td/><input onChange={handleChange('name')}
@@ -162,9 +163,10 @@ return commits.token
               <br/>
               <br/>
 
-         
+         </div>
 
-       <h4> <span>Payment Information</span></h4> 
+       <div className={'payment-information-sgmnt'}style={{fontWeight:500}}>Payment Information</div>
+       <div className={'payment-info-table'}>
 <table>
          <tr/> <label className="font-label"  >PAYMENT METHOD:</label>
           <br />
@@ -195,11 +197,11 @@ return commits.token
                                 <option value="18">UOB</option>
            </select><br></br>
            </table>
-        
+        </div>
        
-
-          <h4  ><span>Payment Method</span></h4>
-
+        
+<div className={'payment-method-sgmnt'}style={{fontWeight:500}}>Payment Method</div>
+<div className={'payment-method-table'}>
         <table >
          <tr/> <label  >EMAIL ADDRESS:</label><br/>
           
@@ -212,6 +214,7 @@ return commits.token
           <br />
 
           </table>
+          
          
           <label  >PHONE NO:</label> <br/>
           <input onChange={handleChange('phone')}
@@ -221,7 +224,7 @@ return commits.token
             <br />
             <br />
            
-          
+            </div>
           
           </div>
           <div className={'right-box'}>
@@ -250,9 +253,9 @@ return commits.token
                                 Cover for room and board up to RM{` ${this.props.plan["annual_limit"].toLocaleString()}`} a day (choose any room type that is available within this budget)
                             </li>
                         </ul> <br/><br/>
-                        <div style = {{color:'blue'}}><h4>eMedic Annual Limit</h4></div>
+                        <div style = {{color:'#004EFF'}}><h4>eMedic Annual Limit</h4></div>
                         <br/>
-                        <div style = {{color:'blue'}}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
+                        <div style = {{color:'#004EFF'}}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
                 </div><br/>
                 <center>
                 <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
