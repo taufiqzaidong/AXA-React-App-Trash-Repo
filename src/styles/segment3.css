@@ -19,7 +19,15 @@ button.choose-plan-btn{
 }
 
 ul.plan-description{
-    list-style-type:'✓   ';
+    list-style: none;
+}
+
+ul li::before{
+    content: "✓   ";
+    color: #FF0000;
+    font-weight: bold;
+    width: 1em;
+    margin-left: -1.5em;
 }
 
 .third-seg-background-wrapper {
