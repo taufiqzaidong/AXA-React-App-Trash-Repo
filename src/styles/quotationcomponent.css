@@ -1,3 +1,31 @@
+.phone-box{
+    padding-left: 20px; 
+    padding-bottom: 10px;
+}
+.econfirm-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+.email-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
+.bank-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+.method-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
 .postcode-box{
     width: 40%;
     padding-right:50px;
@@ -111,7 +139,7 @@
     z-index: -1;
     background-color: #F2F2F2;
     width:1105px;
-    height: 500px;
+    height: 550px;
     border-color: transparent;
     border-radius:33px 33px 33px 33px;
     margin: 0 0 0 250px ;
@@ -155,7 +183,7 @@
         border-right: 5px solid;
         border-right-color: #FBBBB4;
         float:left;
-        height: 500px;
+        height: 550px;
         width: 700px;
         margin:0;
         border-radius: 30px 0 0 0;

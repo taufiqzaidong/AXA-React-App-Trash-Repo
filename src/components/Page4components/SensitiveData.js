@@ -117,13 +117,13 @@ return commits.token
         </div>
           
           <div className={'dob-box'} style={{position:'relative'}}>
-            <label  >DATE OF BIRTH:</label> <br/>
+            <label  >DATE OF BIRTH</label> <br/>
             <input onChange={handleChange('dob')}
                 defaultValue={values.dob} type="date" placeholder="Day / Month / Year"></input>
           </div>
          
           <div className={'address-box'} style={{position:'relative'}}>
-            <label  >ADDRESS: </label> <br/>
+            <label  >ADDRESS </label> <br/>
             <input onChange={handleChange('address_1')}
                 defaultValue={values.address_1}  type="text" placeholder="Address line 1" size="50"></input><br/>
             <br/>
@@ -133,7 +133,7 @@ return commits.token
 
           <div className={'state-postcode-box'} style={{position:'relative'}}>
             <div className={'state-box'}>
-              <label  >STATE:</label>
+              <label  >STATE</label>
               <br/>
               <select onChange={handleChange('state_id')}
                   defaultValue={values.state_id}  class="sel-input">
@@ -157,7 +157,7 @@ return commits.token
                 </select>
             </div>
             <div className={'postcode-box'}>
-              <label  >POSTCODE:</label>
+              <label  >POSTCODE</label>
               <br/>
               <input onChange={handleChange('postcode')}
                 defaultValue={values.postcode} 
@@ -172,17 +172,21 @@ return commits.token
 
        <div className={'payment-information-sgmnt'}style={{fontWeight:500}}>Payment Information</div>
        <div className={'payment-info-table'}>
-<table>
-         <tr/> <label className="font-label"  >PAYMENT METHOD:</label>
-          <br />
-          <td/><select class="sel-input">
+         <br/>
+        <div className={'method-bank-box'}>
+          <div className={'method-box'}>
+            PAYMENT METHOD
+            <br/>
+            <select class="sel-input">
                                 <option value="">Select payment method</option>
                                 <option value="2">Online Banking</option>
                                 <option value="3">Credit Card</option>
           </select>
-          <br/>
-         <td/> <label  >BANK:</label> <br/>
-         <td/> <select class="sel-input">
+          </div>
+          <div className={'bank-box'}>
+            SELECT YOUR BANK
+            <br/>
+            <select class="sel-input">
                                 <option value="">Select bank</option>
                                 <option value="1">AffinOnline</option>
                                 <option value="2">Alliance Online</option>
@@ -200,37 +204,41 @@ return commits.token
                                 <option value="16">RHB Online</option>
                                 <option value="17">Standard Chartered Bank</option>
                                 <option value="18">UOB</option>
-           </select><br></br>
-           </table>
+           </select>
+          </div>
         </div>
+        <br/>
+      </div>
+        <br/>
+        <br/>
         <br/>
        
         
-<div className={'payment-method-sgmnt'}style={{fontWeight:500}}>Contact Information</div>
-<div className={'payment-method-table'}>
-        <table >
-         <tr/> <label  >EMAIL ADDRESS:</label><br/>
-          
-        <td/>  <input onChange={handleChange('email')}
-              defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input><br/>
-        
-         <td/> <label  >CONFIRM EMAIL ADDRESS:</label><br/>
-          
-         <td/> <input type="text" placeholder="youremail@email.com" ></input>
-          <br />
-
-          </table>
-          
-         
+        <div className={'payment-method-sgmnt'}style={{fontWeight:500}}>Contact Information</div>
+        <div className={'payment-method-table'}>
+          <br/>
+          <div className={'email-econfirm-box'}>
+            <div className={'email-box'}>
+              EMAIL ADDRESS<br/>
+              <input onChange={handleChange('email')}
+              defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input>
+            </div>
+            <div className={'econfirm-box'}>
+              CONFIRM EMAIL ADDRESS<br/>
+              <input type="text" placeholder="youremail@email.com" ></input>
+            </div>
+          </div> 
+          <br/>
+          <div className={'phone-box'}>
           <label  >PHONE NO:</label> <br/>
           <input onChange={handleChange('phone')}
               defaultValue={values.phone}
               type="text" placeholder="+60 123456789" maxlength="14" ></input>
-       
+          </div>
             <br />
             <br />
            
-            </div>
+        </div>
           
           </div>
           <div className={'right-box'}>
