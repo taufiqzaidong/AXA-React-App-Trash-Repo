@@ -1,3 +1,103 @@
+.phone-box{
+    padding-left: 20px; 
+    padding-bottom: 10px;
+}
+.econfirm-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+.email-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
+.bank-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+.method-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
+.postcode-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+.state-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
+.address-box{
+    padding-left: 20px; 
+    padding-bottom: 10px;
+}
+
+.dob-box{
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.name-box{
+    width: 50%;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.ic-box{
+    width: 40%;
+    padding-right:50px;
+    float:right;
+    padding-bottom: 10px;
+}
+
+.form-plan-title{
+    font-family: 'Montserrat', sans-serif;
+    z-index: 1;
+}
+
+.payment-method-sgmnt{
+    height: 30px;
+    text-indent:30px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #7030A0;
+}
+
+.payment-method-table{
+  
+    width: 700px;
+    height: 100px;
+}
+
+.personal-details-table{
+
+    width: 700px;
+}
+
+.payment-information-sgmnt{
+    height: 30px;
+    text-indent:30px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #7030A0;
+}
+.payment-info-table{
+    width: 700px;
+}
 .your-plan-txt{
     border-top-left-radius: 50px;
     font-size: 1.5em;
@@ -7,11 +107,13 @@
 }
 
 .personal-details-txt{
+    height: 30px;
+    text-indent:30px;
     border-top-left-radius: 50px;
     font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
     color: white;
-
+    background-color: #7030A0;
 }
 
 .form-component-quote {
@@ -34,9 +136,10 @@
 
 
 .content-box {
+    z-index: -1;
     background-color: #F2F2F2;
-    width:1200px;
-    height: 450px;
+    width:1105px;
+    height: 550px;
     border-color: transparent;
     border-radius:33px 33px 33px 33px;
     margin: 0 0 0 250px ;
@@ -63,7 +166,7 @@
     width: 800px;
     margin:0;
     border-radius: 100px 100px 0 0;
-    background-color: rgb(138, 116, 238);
+    background-color: #7030A0;
     
 }
 
@@ -82,25 +185,28 @@
         width: 800px;
         margin:0;
         border-radius: 0 0 0 0;
-        background-color: rgb(138, 116, 238);
+        background-color: #7030A0;
     }
 
     .left-box {
+        border-right: 5px solid;
+        border-right-color: #FBBBB4;
         float:left;
-        height:30px;
+        height: 550px;
         width: 700px;
         margin:0;
-        border-radius: 100px 0 0 0;
-        background-color: rgb(138, 116, 238);
+        border-radius: 30px 0 0 0;
+        background-color: transparent;
         
  }
-    .right-box {
 
+    .right-box {
+        font-family: 'Montserrat', sans-serif;
         float:right;
         height:30px;
-        width: 500px;
+        width: 400px;
         border-radius: 0 100px 0 0;
-        background-color: rgb(138, 116, 238);
+        background-color: #7030A0;
     }
 
  .plan-box {
@@ -116,12 +222,10 @@
 
  .table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
     width: 100%;
  }
 
  td, th {
-    border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
   }
@@ -200,6 +304,7 @@
 }
 
 .plan-info {
+    font-family: 'Montserrat', sans-serif;
     width:250px;
     text-align: justify;
     position: relative;
@@ -226,25 +331,25 @@
 }
 
 .submit-btn {
-    position: absolute;
-    left: 67%;
+    left: 20%;
+    position: relative;
     transform: translateX(-50%);
     text-align: center;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
-    background-color: #6164f3;
+    background-color: #004EFF;
     display: inline-block;
     color : white;
     cursor: pointer;
 }
 .change-btn {
-    position: absolute;
-    left: 75%;
+    left: 10%;
+    position: relative;
     transform: translateX(-50%);
     text-align: center;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
-    background-color: #6164f3;
+    background-color: #004EFF;
     display: inline-block;
     color : white;
     cursor: pointer;

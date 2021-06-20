@@ -98,84 +98,95 @@ return commits.token
         
         <div className={'left-box'}>
       
-        <div className={'personal-details-txt'}style={{fontWeight:500}}><center><span>Personal Details</span><br/> <br/></center></div>
-        
-         <table >
-         <tr/> <label  >NAME: </label> 
-          <td/><input onChange={handleChange('name')}
-              defaultValue={values.name}  placeholder="Enter your Full Name" maxlength="80" ></input>
-        
-          <td/>  <label  >IC NO:</label>
-          <td/>  <input  onChange={handleChange('identification_no')}
+        <div className={'personal-details-txt'}style={{fontWeight:500}}>Personal Information</div>
+        <div className={'personal-details-table'}>
+        <br/> 
+        <div className={'name-ic-no'} style={{position:'relative'}}>
+          <div className={'name-box'}>
+            NAME
+            <br/>
+            <input onChange={handleChange('name')}
+                defaultValue={values.name}  placeholder="Enter your Full Name" maxlength="80" ></input>
+          </div>
+          <div className={'ic-box'}>
+            IC NO.
+            <br/>
+            <input  onChange={handleChange('identification_no')}
               defaultValue={values.identification_no} type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
-            </table>
-
-            <br />
-            
+          </div>
+        </div>
           
-          <label  >DATE OF BIRTH:</label> <br/>
-          <input onChange={handleChange('dob')}
-              defaultValue={values.dob} type="date" placeholder="Day / Month / Year"  ></input>
-          
+          <div className={'dob-box'} style={{position:'relative'}}>
+            <label  >DATE OF BIRTH</label> <br/>
+            <input onChange={handleChange('dob')}
+                defaultValue={values.dob} type="date" placeholder="Day / Month / Year"></input>
+          </div>
          
-          <br/>
-          <br />
-          <label  >ADDRESS: </label> <br/>
-          <input onChange={handleChange('address_1')}
-              defaultValue={values.address_1}  type="text" placeholder="Address line 1" size="50"></input><br/>
-          <br/>
-          <input onChange={handleChange('address_2')}
-              defaultValue={values.address_2} type="text" placeholder="Address line 2" size="50"></input>
-          
-            <br />
-            <br />
+          <div className={'address-box'} style={{position:'relative'}}>
+            <label  >ADDRESS </label> <br/>
+            <input onChange={handleChange('address_1')}
+                defaultValue={values.address_1}  type="text" placeholder="Address line 1" size="50"></input><br/>
+            <br/>
+            <input onChange={handleChange('address_2')}
+                defaultValue={values.address_2} type="text" placeholder="Address line 2" size="50"></input>
+          </div>
 
-          <label  >STATE:</label>
-          <select onChange={handleChange('state_id')}
-              defaultValue={values.state_id}  class="sel-input">
-                                <option value="">Select a state</option>
-                                <option value="1">Johor</option>
-                                <option value="2">Kedah</option>
-                                <option value="3">Kelantan</option>
-                                <option value="4">Melaka</option>
-                                <option value="5">Negeri Sembilan</option>
-                                <option value="6">Pahang</option>
-                                <option value="7">Perak</option>
-                                <option value="8">Perlis</option>
-                                <option value="9">Pulau Pinang</option>
-                                <option value="10">Sabah</option>
-                                <option value="11">Sarawak</option>
-                                <option value="12">Selangor</option>
-                                <option value="13">Terengganu</option>
-                                <option value="14">WP Kuala Lumpur</option>
-                                <option value="15">WP Labuan</option>
-                                <option value="16">WP Putrajaya</option>
-            </select>
-       
-
-
-          <label  >POSTCODE:</label>
-          <input onChange={handleChange('postcode')}
-              defaultValue={values.postcode} 
-              type="text" placeholder="00000" maxlength="5"></input>
-
+          <div className={'state-postcode-box'} style={{position:'relative'}}>
+            <div className={'state-box'}>
+              <label  >STATE</label>
+              <br/>
+              <select onChange={handleChange('state_id')}
+                  defaultValue={values.state_id}  class="sel-input">
+                                    <option value="">Select a state</option>
+                                    <option value="1">Johor</option>
+                                    <option value="2">Kedah</option>
+                                    <option value="3">Kelantan</option>
+                                    <option value="4">Melaka</option>
+                                    <option value="5">Negeri Sembilan</option>
+                                    <option value="6">Pahang</option>
+                                    <option value="7">Perak</option>
+                                    <option value="8">Perlis</option>
+                                    <option value="9">Pulau Pinang</option>
+                                    <option value="10">Sabah</option>
+                                    <option value="11">Sarawak</option>
+                                    <option value="12">Selangor</option>
+                                    <option value="13">Terengganu</option>
+                                    <option value="14">WP Kuala Lumpur</option>
+                                    <option value="15">WP Labuan</option>
+                                    <option value="16">WP Putrajaya</option>
+                </select>
+            </div>
+            <div className={'postcode-box'}>
+              <label  >POSTCODE</label>
+              <br/>
+              <input onChange={handleChange('postcode')}
+                defaultValue={values.postcode} 
+                type="text" placeholder="00000" maxlength="5"></input>
+            </div>
+          </div>
               <br/>
               <br/>
+              <br/>
+         </div>
+         <br/>
 
-         
-
-       <h4> <span>Payment Information</span></h4> 
-<table>
-         <tr/> <label className="font-label"  >PAYMENT METHOD:</label>
-          <br />
-          <td/><select class="sel-input">
+       <div className={'payment-information-sgmnt'}style={{fontWeight:500}}>Payment Information</div>
+       <div className={'payment-info-table'}>
+         <br/>
+        <div className={'method-bank-box'}>
+          <div className={'method-box'}>
+            PAYMENT METHOD
+            <br/>
+            <select class="sel-input">
                                 <option value="">Select payment method</option>
                                 <option value="2">Online Banking</option>
                                 <option value="3">Credit Card</option>
           </select>
-          <br/>
-         <td/> <label  >BANK:</label> <br/>
-         <td/> <select class="sel-input">
+          </div>
+          <div className={'bank-box'}>
+            SELECT YOUR BANK
+            <br/>
+            <select class="sel-input">
                                 <option value="">Select bank</option>
                                 <option value="1">AffinOnline</option>
                                 <option value="2">Alliance Online</option>
@@ -193,35 +204,41 @@ return commits.token
                                 <option value="16">RHB Online</option>
                                 <option value="17">Standard Chartered Bank</option>
                                 <option value="18">UOB</option>
-           </select><br></br>
-           </table>
-        
+           </select>
+          </div>
+        </div>
+        <br/>
+      </div>
+        <br/>
+        <br/>
+        <br/>
        
-
-          <h4  ><span>Payment Method</span></h4>
-
-        <table >
-         <tr/> <label  >EMAIL ADDRESS:</label><br/>
-          
-        <td/>  <input onChange={handleChange('email')}
-              defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input><br/>
         
-         <td/> <label  >CONFIRM EMAIL ADDRESS:</label><br/>
-          
-         <td/> <input type="text" placeholder="youremail@email.com" ></input>
-          <br />
-
-          </table>
-         
+        <div className={'payment-method-sgmnt'}style={{fontWeight:500}}>Contact Information</div>
+        <div className={'payment-method-table'}>
+          <br/>
+          <div className={'email-econfirm-box'}>
+            <div className={'email-box'}>
+              EMAIL ADDRESS<br/>
+              <input onChange={handleChange('email')}
+              defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input>
+            </div>
+            <div className={'econfirm-box'}>
+              CONFIRM EMAIL ADDRESS<br/>
+              <input type="text" placeholder="youremail@email.com" ></input>
+            </div>
+          </div> 
+          <br/>
+          <div className={'phone-box'}>
           <label  >PHONE NO:</label> <br/>
           <input onChange={handleChange('phone')}
               defaultValue={values.phone}
               type="text" placeholder="+60 123456789" maxlength="14" ></input>
-       
+          </div>
             <br />
             <br />
            
-          
+        </div>
           
           </div>
           <div className={'right-box'}>
@@ -231,7 +248,7 @@ return commits.token
             <br/>
             <br/>
             <br/>
-            <div ><center><h1>{`eMedic ${this.props.plan.name}`}  </h1></center></div>
+            <div classname={'form-plan-title'} ><center><h1 style={{fontWeight:700},{color: '#FBBBB4'}}>{`eMedic ${this.props.plan.name}`}</h1> </center></div>
             
                     <div className={'plan-info'} style={{fontSize: 13}}>
                         <ul className='plan-description'>
@@ -250,14 +267,19 @@ return commits.token
                                 Cover for room and board up to RM{` ${this.props.plan["annual_limit"].toLocaleString()}`} a day (choose any room type that is available within this budget)
                             </li>
                         </ul> <br/><br/>
-                        <div style = {{color:'blue'}}><h4>eMedic Annual Limit</h4></div>
+                        <div style = {{color:'#004EFF'}}><h4>eMedic Annual Limit</h4></div>
                         <br/>
-                        <div style = {{color:'blue'}}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
-                </div><br/>
-                <center>
-                <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
-                <button onClick={this.continue} className = {'change-btn'}>Submit</button>
-                </center>
+                        <div style = {{color:'#004EFF'}}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
+
+                        <br/>
+                        <center>
+                          <button onClick={this.back} className = {'change-btn'}>Change Plan</button>
+                        <button  onClick={this.continue} className = {'submit-btn'}>Proceed</button>
+                        </center>
+                </div>
+                
+                
+               
           </div>
         </div>
         </div>
