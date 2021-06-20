@@ -48,7 +48,7 @@
  .form-box {
     background-color: #fff;
     width:800px;
-    height: 350px;
+    height: 650px;
     border-style: solid;
     border-radius:33px 33px 0 0;
     margin: 0 0 0 320px ;
@@ -65,6 +65,15 @@
     border-radius: 100px 100px 0 0;
     background-color: rgb(138, 116, 238);
     
+}
+
+.constribution-box {
+    float:top;
+    height:30px;
+    width: 800px;
+    margin:0;
+    border-radius: 0 0 0 0;
+    background-color: rgb(138, 116, 238);
 }
 
     .middle-box{

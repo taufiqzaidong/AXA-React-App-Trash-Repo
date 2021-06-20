@@ -15,7 +15,7 @@ export class ConfirmData extends Component {
 
         return (
             <div className={'image-wrapper2 '}>
-               <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+               <br/><br/><br/><br/>
             <div className={'form-box'}>
             <div className={'top-box'}>
             <center><h1>Your personal Information</h1></center>
@@ -72,9 +72,51 @@ export class ConfirmData extends Component {
           </tr>
           </table>
           </center>
+
+          <div className={'constribution-box'}>
+             <center><h1>Your Constribution</h1></center>
+             </div>
+             <center>
+           <table>
+           <tr>
+            <th>Constribution Payment (RM)</th>
+            <th>Monthly</th>
+            <th>Half-Yearly</th>
+            <th>Annually</th>
+          </tr>
+          <tr>
+            <td>eMedic Plan</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Reward</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Total Constribution</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Frequency of Constribution</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Payment Period</td>
+            <td></td>
+          </tr>
+          </table>
+          </center>
+
+
            <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
+           <button  onClick={this.back} className = {'submit-btn'}>Proceed</button>
            </div> 
            </div>
+          
         )
     }
 }
