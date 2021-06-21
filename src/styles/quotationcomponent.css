@@ -151,7 +151,7 @@
  .form-box {
     background-color: #fff;
     width:800px;
-    height: 650px;
+    height: 600px;
     border-style: solid;
     border-radius:33px 33px 0 0;
     margin: 0 0 0 320px ;
@@ -176,7 +176,7 @@
     width: 800px;
     margin:0;
     border-radius: 0 0 0 0;
-    background-color: rgb(138, 116, 238);
+    background-color:#7030A0;
 }
 
     .middle-box{

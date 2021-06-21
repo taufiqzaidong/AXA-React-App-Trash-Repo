@@ -21,7 +21,9 @@ class Quotations extends Component {
                       address_1 : '',
                       postcode : '',
                       state_id : '' ,
-                      address_2 : ''};
+                      address_2 : '',
+                      paymentmethod : '' ,
+                      bank : '' ,};
     }
 
   nextStep = () => {
@@ -135,8 +137,8 @@ class Quotations extends Component {
     render() {
 
         const { step } = this.state
-        const { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id, address_2 } = this.state;
-        const values = { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id , address_2};
+        const { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id, address_2,bank,paymentmethod } = this.state;
+        const values = { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id , address_2,bank,paymentmethod};
 
         switch (step) {
             case 1:
@@ -179,6 +181,7 @@ class Quotations extends Component {
                                     basePriceMonthly={
                                         individualPlan["base_price_monthly"]
                                     }
+                                    basePriceYearly={individualPlan["base_price_yearly"]}
                                     planDetailId={
                                         individualPlan["plan_detail_id"]
                                     }
@@ -198,29 +201,24 @@ class Quotations extends Component {
         case 2: 
         return (
             <div  >
-           
                 <div >
                      <div className="form-header">
                         <div >
                             {this.props.backButton}
                         </div> 
-                        <h1>Enter your sensitive Data</h1>             
+                        <h1></h1>             
                     </div>              
                 </div>
-           
-            
                 <div className="plan-div">
-                
                 {this.state.data.map((individualPlan) => (
-                          
             <SensitiveData
             basePriceMonthly={individualPlan["base_price_monthly"]}
+            basePriceYearly={individualPlan["base_price_yearly"]}
             plan={individualPlan["plan"]}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             values={values} /> 
-
             ))}
     </div>
 </div>
@@ -229,10 +227,31 @@ class Quotations extends Component {
 
         case 3: 
         return (
+            <div  >
+            <div >
+                 <div className="form-header">
+                    <div >
+                        {this.props.backButton}
+                    </div> 
+                    <h1></h1>             
+                </div>              
+            </div>
+            <div className="plan-div">
+            {this.state.data.map((individualPlan) => (
             <ConfirmData
+            key={individualPlan["plan_detail_id"]}
+            basePriceYearly={individualPlan["base_price_yearly"]}
+            basePriceMonthly={
+            individualPlan["base_price_monthly"] }
+            planDetailId={
+            individualPlan["plan_detail_id"]}
+            plan={individualPlan["plan"]}
             nextStep={this.nextStep}
             prevStep={this.prevStep} 
             values={values}/>
+            ))}
+            </div>
+        </div>
         )
 
 

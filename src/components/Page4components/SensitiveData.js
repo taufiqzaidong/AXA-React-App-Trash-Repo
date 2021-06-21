@@ -6,20 +6,35 @@ export class SensitiveData extends Component {
 
   constructor(props) {
     super(props);
- 
+    this.state = {
+      name :'',
+      dob : '',
+      identification_no : '',
+      email : '',
+      phone : '',
+      gender : '',
+      is_citizen : '',
+      plan_detail_id : '',
+      is_heavymachineworker : '',
+      address_1 : '',
+      postcode : '',
+      state_id : '' ,
+      address_2 : ''};
 
+
+    this.create = this.create.bind(this);
+    this.handleChange = this.handleChange.bind(this);
                 }
 
                 continue = e => {
                   this.props.nextStep();
                 };
-
                 back = e => {
                   this.props.prevStep();
                 };
 
-             /*     
-                async loginToAPI() {
+                /*
+               async loginToAPI() {
                   let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/login';
                   let response = await fetch(url, {
                       method: 'POST',
@@ -38,7 +53,14 @@ export class SensitiveData extends Component {
         this.setState({
           
           name: event.target.value,
-          dob : event.target.value
+          dob : event.target.value,
+          identification_no : event.target.value,
+          dob : event.target.value,
+          address_1 : event.target.value,
+          state : event.target.value,
+          postcode : event.target.value,
+          email : event.target.value,
+          phone : event.target.value,
         
         });
                 }
@@ -61,9 +83,9 @@ export class SensitiveData extends Component {
           });
     
         event.preventDefault();
-    } */
+    } 
 
-/* async CreateIndividualOrder() {
+ async CreateIndividualOrder() {
 let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/orders';
 let accessToken = await this.loginToAPI();
 let response = await fetch(url, {
@@ -79,7 +101,40 @@ headers: {
 let commits = await response.json();
     
 return commits.token
-} */
+}  */
+
+create(e) {
+  // add entity - POST
+  e.preventDefault();
+  // creates entity
+  fetch("https://medical-api-uat.learnmyprotection.com/api/v1/orders", {
+    "method": "POST",
+    "headers": {
+      Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
+      'Content-Type': 'application/json',
+      'x-access-token' : 'accessToken',
+    },
+    "body": JSON.stringify({
+      name: this.state.name,
+      notes: this.state.notes
+    })
+  })
+  .then(response => response.json())
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
+
+
+
+
+    handleChange(changeObject) {
+      this.setState(changeObject)
+    }
 
       
     render() {
@@ -138,22 +193,22 @@ return commits.token
               <select onChange={handleChange('state_id')}
                   defaultValue={values.state_id}  class="sel-input">
                                     <option value="">Select a state</option>
-                                    <option value="1">Johor</option>
-                                    <option value="2">Kedah</option>
-                                    <option value="3">Kelantan</option>
-                                    <option value="4">Melaka</option>
-                                    <option value="5">Negeri Sembilan</option>
-                                    <option value="6">Pahang</option>
-                                    <option value="7">Perak</option>
-                                    <option value="8">Perlis</option>
-                                    <option value="9">Pulau Pinang</option>
-                                    <option value="10">Sabah</option>
-                                    <option value="11">Sarawak</option>
-                                    <option value="12">Selangor</option>
-                                    <option value="13">Terengganu</option>
-                                    <option value="14">WP Kuala Lumpur</option>
-                                    <option value="15">WP Labuan</option>
-                                    <option value="16">WP Putrajaya</option>
+                                    <option  value="Johor">Johor</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Melaka">Melaka</option>
+                                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Perlis">Perlis</option>
+                                    <option value="Pulau Pinang">Pulau Pinang</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                    <option value="Selangor">Selangor</option>
+                                    <option value="Terengganu">Terengganu</option>
+                                    <option value="Kuala Lumpur">WP Kuala Lumpur</option>
+                                    <option value="Labuan">WP Labuan</option>
+                                    <option value="Putrajaya">WP Putrajaya</option>
                 </select>
             </div>
             <div className={'postcode-box'}>
@@ -177,33 +232,35 @@ return commits.token
           <div className={'method-box'}>
             PAYMENT METHOD
             <br/>
-            <select class="sel-input">
+            <select onChange={handleChange('paymentmethod')}
+                  defaultValue={values.paymentmethod} class="sel-input">
                                 <option value="">Select payment method</option>
-                                <option value="2">Online Banking</option>
-                                <option value="3">Credit Card</option>
+                                <option value="Online Banking">Online Banking</option>
+                                <option value="Credit Card">Credit Card</option>
           </select>
           </div>
           <div className={'bank-box'}>
             SELECT YOUR BANK
             <br/>
-            <select class="sel-input">
+            <select onChange={handleChange('bank')}
+                  defaultValue={values.bank} class="sel-input">
                                 <option value="">Select bank</option>
-                                <option value="1">AffinOnline</option>
-                                <option value="2">Alliance Online</option>
-                                <option value="3">AmOnline</option>
-                                <option value="4">Bank Islam</option>
-                                <option value="5">Bank Rakyat Internet Banking</option>
-                                <option value="6">Bank Muamalat</option>
-                                <option value="8">CIMB Click</option>
-                                <option value="9">Hong Leong Online</option>
-                                <option value="10">HSBC</option>
-                                <option value="12">Maybank2U</option>
-                                <option value="13">Maybank2E</option>
-                                <option value="14">OCBC</option>
-                                <option value="15">Public Bank</option>
-                                <option value="16">RHB Online</option>
-                                <option value="17">Standard Chartered Bank</option>
-                                <option value="18">UOB</option>
+                                <option value="AffinOnline">AffinOnline</option>
+                                <option value="Alliance Online">Alliance Online</option>
+                                <option value="AmOnline<">AmOnline</option>
+                                <option value="Bank Islam">Bank Islam</option>
+                                <option value="Bank Rakyat Internet Banking">Bank Rakyat Internet Banking</option>
+                                <option value="Bank Muamalat">Bank Muamalat</option>
+                                <option value="CIMB Click">CIMB Click</option>
+                                <option value="Hong Leong Online">Hong Leong Online</option>
+                                <option value="HSBC">HSBC</option>
+                                <option value="Maybank2U">Maybank2U</option>
+                                <option value="Maybank2E">Maybank2E</option>
+                                <option value="OCBC">OCBC</option>
+                                <option value="Public Bank">Public Bank</option>
+                                <option value="RHB Online">RHB Online</option>
+                                <option value="Standard Chartered Bank">Standard Chartered Bank</option>
+                                <option value="UOB">UOB</option>
            </select>
           </div>
         </div>
@@ -256,7 +313,7 @@ return commits.token
                                 <span>
                                     Cover for hospitalisation expenses{" "}
                                     <strong>in Malaysia only,</strong> up to
-                                    RM{`XX`}, including surgery, ambulance, ICU and
+                                    RM{` ${this.props.plan["annual_limit"].toLocaleString()}`}, including surgery, ambulance, ICU and
                                     prescription drugs<br/><br/>
                                 </span>
                             </li>
@@ -273,8 +330,8 @@ return commits.token
 
                         <br/>
                         <center>
-                          <button onClick={this.back} className = {'change-btn'}>Change Plan</button>
-                        <button  onClick={this.continue} className = {'submit-btn'}>Proceed</button>
+                          <button  onClick={this.back} className = {'change-btn'}>Change Plan</button>
+                        <button onClick={(e) => this.create(e)} onClick={this.continue} className = {'submit-btn'}>Proceed</button>
                         </center>
                 </div>
                 

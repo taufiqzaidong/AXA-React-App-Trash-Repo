@@ -10,12 +10,14 @@ export class ConfirmData extends Component {
 
     render() {
         const {
-            values: { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id, address_2 }
+            values: { name, dob, identification_no, email,phone,gender,is_citizen,plan_detail_id,is_heavymachineworker,address_1, postcode, state_id, address_2,bank,paymentmethod }
           } = this.props;
 
         return (
             <div className={'image-wrapper2 '}>
+              
                <br/><br/><br/><br/>
+              
             <div className={'form-box'}>
             <div className={'top-box'}>
             <center><h1>Your personal Information</h1></center>
@@ -46,7 +48,7 @@ export class ConfirmData extends Component {
           <tr>
             <th>Home Address:</th>
             <th>State:</th>
-            <th>State:</th>
+            <th>Postcode:</th>
           </tr>
           <tr>
             <td>{`${address_1}`} {`${address_2}`} </td>
@@ -67,8 +69,8 @@ export class ConfirmData extends Component {
             <th>Bank:</th>
           </tr>
           <tr>
-            <td>lol</td>
-            <td>lol</td>
+            <td>{`${paymentmethod}`}</td>
+            <td>{`${bank}`}</td>
           </tr>
           </table>
           </center>
@@ -81,32 +83,24 @@ export class ConfirmData extends Component {
            <tr>
             <th>Constribution Payment (RM)</th>
             <th>Monthly</th>
-            <th>Half-Yearly</th>
             <th>Annually</th>
           </tr>
           <tr>
-            <td>eMedic Plan</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>eMedic {this.props.plan.name}</td>
+            <td>RM {this.props.basePriceMonthly}</td>
+            <td>RM {this.props.basePriceYearly}</td>
           </tr>
           <tr>
-            <td>Reward</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Total Constribution</td>
-            <td></td>
+            <td>Total Contribution</td>
+            <td>RM{` ${this.props.plan["annual_limit"].toLocaleString()}`}</td>
           </tr>
           <tr>
             <td>Frequency of Constribution</td>
-            <td></td>
+            <td>Monthly</td>
           </tr>
           <tr>
             <td>Payment Period</td>
-            <td></td>
+            <td>20 Years</td>
           </tr>
           </table>
           </center>
