@@ -21,10 +21,13 @@ export class SensitiveData extends Component {
       state_id : '' ,
       address_2 : ''};
 
-
-    this.create = this.create.bind(this);
-    this.handleChange = this.handleChange.bind(this);
                 }
+                
+                onClick(event) {
+                  this.continue();
+                  this.CreateIndividualOrder();
+               }
+               
 
                 continue = e => {
                   this.props.nextStep();
@@ -33,7 +36,7 @@ export class SensitiveData extends Component {
                   this.props.prevStep();
                 };
 
-                /*
+                
                async loginToAPI() {
                   let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/login';
                   let response = await fetch(url, {
@@ -49,41 +52,6 @@ export class SensitiveData extends Component {
                   return commits.token
               }
 
-      handleChange = (event) => {
-        this.setState({
-          
-          name: event.target.value,
-          dob : event.target.value,
-          identification_no : event.target.value,
-          dob : event.target.value,
-          address_1 : event.target.value,
-          state : event.target.value,
-          postcode : event.target.value,
-          email : event.target.value,
-          phone : event.target.value,
-        
-        });
-                }
-
-      handleSubmit = (event) => {
-
-          fetch('https://medical-api-uat.learnmyprotection.com/api/v1/orders', {
-            method: 'POST',
-            headers: {
-              Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
-              'Content-Type': 'application/json',
-              'x-access-token' : 'accessToken',
-          }
-          
-          })
-          body: JSON.stringify(this.state)
-          .then(function(response) {
-            console.log(response)
-            return response.json();
-          });
-    
-        event.preventDefault();
-    } 
 
  async CreateIndividualOrder() {
 let url = 'https://medical-api-uat.learnmyprotection.com/api/v1/orders';
@@ -91,50 +59,49 @@ let accessToken = await this.loginToAPI();
 let response = await fetch(url, {
 method: 'POST',
 headers: {
-    
-    Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
     'Content-Type': 'application/json',
     'x-access-token' : accessToken
-}
+},
+body: JSON.stringify({
+  "name": this.props.values.name,
+  "dob": "1999-09-03",
+  "identification_no": "990903-08-5523",
+  "email": this.props.values.email,
+  "phone": this.props.values.phone,
+  "gender": 1,
+  "is_citizen": 1,
+  "detail": {
+    "plan_detail_id": 1,
+    "is_heavymachineworker": 0,
+    "address_1": this.props.values.address_1,
+    "address_2": this.props.values.address_2,
+    "postcode": this.props.values.postcode,
+    "affiliate_id": "string",
+    "source": "axaweb",
+    "state_id": 1,
+    "underwritings": [
+      {
+        "underwriting_id": 1,
+        "status": 1
+ } ],
+ "tcs": [ {
+ "tc_id": 1,
+ "status": 1 }
+    ],
+    "add_ons": [
+      {
+        "add_on_id": 1,
+ "status": 1 }
+ ] }
+ })
 });
 
 let commits = await response.json();
     
 return commits.token
-}  */
-
-create(e) {
-  // add entity - POST
-  e.preventDefault();
-  // creates entity
-  fetch("https://medical-api-uat.learnmyprotection.com/api/v1/orders", {
-    "method": "POST",
-    "headers": {
-      Authorization: 'Basic c3RldmVAY3VybGVjLmNvbTo0I3c0N0ptcEVqWmVtSmpA',
-      'Content-Type': 'application/json',
-      'x-access-token' : 'accessToken',
-    },
-    "body": JSON.stringify({
-      name: this.state.name,
-      notes: this.state.notes
-    })
-  })
-  .then(response => response.json())
-  .then(response => {
-    console.log(response)
-  })
-  .catch(err => {
-    console.log(err);
-  });
-}
+}  
 
 
-
-
-
-    handleChange(changeObject) {
-      this.setState(changeObject)
-    }
 
       
     render() {
@@ -331,7 +298,7 @@ create(e) {
                         <br/>
                         <center>
                           <button  onClick={this.back} className = {'change-btn'}>Change Plan</button>
-                        <button onClick={(e) => this.create(e)} onClick={this.continue} className = {'submit-btn'}>Proceed</button>
+                        <button onClick={ () => this.CreateIndividualOrder()}  className = {'submit-btn'}>Proceed</button>
                         </center>
                 </div>
                 

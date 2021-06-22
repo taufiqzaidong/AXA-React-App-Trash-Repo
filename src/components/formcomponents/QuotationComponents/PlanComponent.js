@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SensitiveData from '../../Page4components/SensitiveData';
 
 
 class PlanComponent extends Component {
