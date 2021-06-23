@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ConfirmData from '../Page4components/ConfirmData';
 import SensitiveData from '../Page4components/SensitiveData';
+import Status from '../Page4components/Status';
 import PlanComponent from './QuotationComponents/PlanComponent';
+
 
 
 class Quotations extends Component {
@@ -207,7 +209,7 @@ class Quotations extends Component {
                         <div >
                             {this.props.backButton}
                         </div> 
-                        <h1></h1>             
+                                   
                     </div>              
                 </div>
                 <div className="plan-div">
@@ -216,6 +218,8 @@ class Quotations extends Component {
             basePriceMonthly={individualPlan["base_price_monthly"]}
             basePriceYearly={individualPlan["base_price_yearly"]}
             plan={individualPlan["plan"]}
+            gender={this.props.gender}
+            date-of-birth={this.props.Date}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -233,8 +237,7 @@ class Quotations extends Component {
                  <div className="form-header">
                     <div >
                         {this.props.backButton}
-                    </div> 
-                    <h1></h1>             
+                    </div>            
                 </div>              
             </div>
             <div className="plan-div">
@@ -251,6 +254,28 @@ class Quotations extends Component {
             prevStep={this.prevStep} 
             values={values}/>
             ))}
+            </div>
+        </div>
+        )
+
+        case 4: 
+        return (
+            <div  >
+            <div >
+                 <div className="form-header">
+                    <div >
+                        {this.props.backButton}
+                    </div>            
+                </div>              
+            </div>
+            <div className="plan-div">
+            <Status
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values} 
+            />
+            
             </div>
         </div>
         )

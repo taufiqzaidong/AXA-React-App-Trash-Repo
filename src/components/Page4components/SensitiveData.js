@@ -68,7 +68,7 @@ body: JSON.stringify({
   "identification_no": "990903-08-5523",
   "email": this.props.values.email,
   "phone": this.props.values.phone,
-  "gender": 1,
+  "gender": this.props.gender,
   "is_citizen": 1,
   "detail": {
     "plan_detail_id": 1,
@@ -297,8 +297,11 @@ return commits.token
 
                         <br/>
                         <center>
+                          
                           <button  onClick={this.back} className = {'change-btn'}>Change Plan</button>
+                        
                         <button onClick={ () => this.CreateIndividualOrder()}  className = {'submit-btn'}>Proceed</button>
+                        <button  onClick={this.continue} className = {'proceed-btn'}>Print</button>
                         </center>
                 </div>
                 

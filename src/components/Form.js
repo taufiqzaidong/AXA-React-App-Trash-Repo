@@ -6,6 +6,7 @@ import DateOfBirth from "./formcomponents/DateOfBirth";
 import HeightWeight from "./formcomponents/HeightWeight";
 import DateOfBirthFamily from './formcomponents/DateOfBirthFamily';
 import Quotations from './formcomponents/Quotations';
+//import SensitiveData from './formcomponents/Page4Components/SensitiveData';
 
 class Form extends Component {
     constructor(props) {

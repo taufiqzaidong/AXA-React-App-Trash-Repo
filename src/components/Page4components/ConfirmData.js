@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 export class ConfirmData extends Component {
     
+
+  continue = e => {
+    this.props.nextStep();
+  };
+  
     back = e => {
         this.props.prevStep();
       };
@@ -107,7 +112,7 @@ export class ConfirmData extends Component {
 
 
            <button  onClick={this.back} className = {'submit-btn'}>Change Plan</button>
-           <button  onClick={this.back} className = {'submit-btn'}>Proceed</button>
+           <button  onClick={this.continue} className = {'submit-btn'}>Continue</button>
            </div> 
            </div>
           
