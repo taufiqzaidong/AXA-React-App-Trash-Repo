@@ -6,7 +6,7 @@ const LandingParagraph = () => {
             <p style={{fontSize:50}}className="title1">
                 The Amazingly Affordable <br/>Medical Card</p>
                 <br/>
-             <div><p style={{fontSize:30}}className="title2">
+             <div className='testdiv'><p style={{fontSize:30}}className="title2">
              <br/><br/><br/><br/><br/>
                 Getting a medical card is so easy with AXA eMedic. Choose your plan,
                 make <br/>payment and get covered immediately online here! With

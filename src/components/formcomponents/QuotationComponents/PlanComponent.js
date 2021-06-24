@@ -57,7 +57,7 @@ class PlanComponent extends Component {
             
                 <div className={'plan-price'} style={{'backgroundColor': '#FBBBB4'}}>RM {this.props.basePriceMonthly}<span>/month</span></div>
                 <div className={'plan-annual-limit'} style={{fontSize: 15}} >
-                        with <span style={{'color': '#FF0000'}}>{`RM${this.props.plan ["annual_limit"].toLocaleString()}`}</span> annual limit
+                        with <span style={{'color': '#FE8484'}}>{`RM${this.props.plan ["annual_limit"].toLocaleString()}`}</span> annual limit
                     </div>
                     <div className={'plan-info'} style={{fontSize: 13}}>
                         <ul className='plan-description'>

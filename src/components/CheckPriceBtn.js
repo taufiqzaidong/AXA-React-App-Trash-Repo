@@ -9,7 +9,7 @@ class CheckPriceBtn extends Component {
 
     render() {
         return (
-            <div onClick={() => window.scrollTo(0, this.curRef.current.offsetTop)} style={{fontSize:25}}className="check-price-btn">GET STARTED ⪢</div>
+            <div onClick={() => window.scrollTo(0, this.curRef.current.offsetTop)} className="check-price-btn">GET STARTED ⪢</div>
         )
     }
 }

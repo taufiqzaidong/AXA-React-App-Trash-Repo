@@ -83,8 +83,16 @@
 }
 
 .personal-details-table{
-
+    height:230px;
     width: 700px;
+}
+.personal-details-txt{
+    height: 30px;
+    text-indent:30px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #7030A0;
 }
 
 .payment-information-sgmnt{
@@ -189,8 +197,9 @@
     }
 
     .left-box {
+        position:absolute;
         border-right: 5px solid;
-        border-right-color: #FBBBB4;
+        border-right-color: #FE8484;
         float:left;
         height: 550px;
         width: 700px;
@@ -279,6 +288,7 @@
 }
 
 .plan-price {
+    background-color: #FF7F7F;
     width:250px;
     padding: 20px 40px 20px 40px;
     text-align: center;

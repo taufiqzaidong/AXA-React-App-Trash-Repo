@@ -73,26 +73,26 @@
 
 }
 
-
 .check-price-btn {
+    font-size: 15;
     position: absolute;
-    left: 12%;
-    top: 55vh;
+    left: 14%;
+    top: 55%;
     transform: translate(-50%, -50%) scale(1);
     white-space: nowrap;
     cursor: pointer;
-    padding: 0.6em 1.4em 0.6em 1.4em;
-    background-color: #9c29b7;
+    padding: 0.5em 1.2em 0.5em 1.2em;
+    background-color: #8549BA;
     border-radius: 30px;
     color: #f8f8f8;
     transition: transform ease-out 0.2s;
     user-select: none;
-    font-family: 'Open Sans', sans-serif;;
-    font-weight: 700;
+    font-weight: 200;
     -moz-user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
+
 }
 
 button.btn-faqs{
@@ -193,10 +193,12 @@ button.btn-faqs{
     }
 
     .title1 {
+        position: relative;
         margin-top: 1.2em;
     }
 
     .title2 {
+        position: relative;
         margin-top: 5.0em;
     }
 
