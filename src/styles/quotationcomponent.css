@@ -1,33 +1,3 @@
-.phone-box{
-    padding-left: 20px; 
-    padding-bottom: 10px;
-}
-.econfirm-box{
-    width: 40%;
-    padding-right:50px;
-    float:right;
-    padding-bottom: 10px;
-}
-.email-box{
-    width: 50%;
-    padding-left: 20px;
-    float: left;
-    padding-bottom: 10px;
-}
-.bank-box{
-    width: 40%;
-    padding-right:50px;
-    float:right;
-    padding-bottom: 10px;
-}
-.method-box{
-    width: 50%;
-    padding-left: 20px;
-    float: left;
-    padding-bottom: 10px;
-}
-
-
 .form-plan-title{
     font-family: 'Montserrat', sans-serif;
     z-index: 1;
@@ -41,16 +11,6 @@
     color: white;
     background-color: #7030A0;
 }
-
-.payment-method-table{
-  
-    width: 700px;
-    height: 100px;
-}
-
-
-
-
 .payment-information-sgmnt{
     height: 30px;
     text-indent:30px;
@@ -59,9 +19,7 @@
     color: white;
     background-color: #7030A0;
 }
-.payment-info-table{
-    width: 700px;
-}
+
 .your-plan-txt{
     border-top-left-radius: 50px;
     font-size: 1.5em;
@@ -161,18 +119,17 @@
     background-color:#7030A0;
 }
 
-    .middle-box{
+.middle-box{
         float:top;
         height:30px;
         width: 800px;
         margin:0;
         border-radius: 0 0 0 0;
         background-color: #7030A0;
-    }
-
-    .left-box {
-        position:absolute;
-        border-right: 5px solid;
+}
+.left-box {
+    position:absolute;
+      border-right: 5px solid;
         border-right-color: #FE8484;
         float:left;
         height: 550px;

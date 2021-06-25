@@ -311,15 +311,15 @@ export class SensitiveData extends Component {
               </ul> <br /><br />
               <div style={{ color: '#004EFF' }}><h4>eMedic Annual Limit</h4></div>
               <br />
-              <div style={{ color: '#004EFF' }}><center><h1>RM {this.props.basePriceMonthly}</h1></center></div>
+              <div style={{ color: '#004EFF' }}><center><h1 style={{fontSize:35}}>RM {this.props.basePriceMonthly}</h1></center></div>
 
               <br />
+              <br/>
               <center>
 
                 <button onClick={this.back} className={'change-btn'}>Change Plan</button>
 
                 <button onClick={() => this.CreateIndividualOrder().then(this.continue)} className={'submit-btn'}>Proceed</button>
-                <button onClick={this.continue} className={'proceed-btn'}>Print</button>
               </center>
             </div>
 
