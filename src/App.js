@@ -9,6 +9,7 @@ import "./styles/segment2.css";
 import "./styles/segment3.css";
 import "./styles/form.css";
 import "./styles/quotationcomponent.css";
+import "./styles/confirmdata.css";
 
 /*const utilizeScroll = () => {
     const htmlElRef = React.createRef();

@@ -26,41 +26,7 @@
     float: left;
     padding-bottom: 10px;
 }
-.postcode-box{
-    width: 40%;
-    padding-right:50px;
-    float:right;
-    padding-bottom: 10px;
-}
-.state-box{
-    width: 50%;
-    padding-left: 20px;
-    float: left;
-    padding-bottom: 10px;
-}
-.address-box{
-    padding-left: 20px; 
-    padding-bottom: 10px;
-}
 
-.dob-box{
-    padding-left: 20px;
-    padding-bottom: 10px;
-}
-
-.name-box{
-    width: 50%;
-    padding-left: 20px;
-    float: left;
-    padding-bottom: 10px;
-}
-
-.ic-box{
-    width: 40%;
-    padding-right:50px;
-    float:right;
-    padding-bottom: 10px;
-}
 
 .form-plan-title{
     font-family: 'Montserrat', sans-serif;
@@ -82,18 +48,8 @@
     height: 100px;
 }
 
-.personal-details-table{
-    height:230px;
-    width: 700px;
-}
-.personal-details-txt{
-    height: 30px;
-    text-indent:30px;
-    font-size: 1.5em;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    background-color: #7030A0;
-}
+
+
 
 .payment-information-sgmnt{
     height: 30px;
@@ -113,8 +69,26 @@
     color: white;
 
 }
-
-.personal-details-txt{
+.personal-details-table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 700px;
+}
+.personal-details-table th{
+    width: 700px;
+    padding:0;
+    padding-left: 2vw;
+    font-weight:500;
+    font-family:'Montserrat',sans-serif;
+    color:#8954BA;
+    text-transform: capitalize;
+    font-size:0.9em;
+}
+.personal-details-table td{
+    padding:0;
+    padding-left: 2vw;
+}
+.personal-details-sgmnt{
     height: 30px;
     text-indent:30px;
     border-top-left-radius: 50px;

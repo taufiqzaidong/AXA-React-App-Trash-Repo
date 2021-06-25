@@ -124,43 +124,59 @@ export class SensitiveData extends Component {
 
           <div className={'left-box'}>
 
-            <div className={'personal-details-txt'} style={{ fontWeight: 500 }}>Personal Information</div>
-            <div className={'personal-details-table'}>
-              <br />
-              <div className={'name-ic-no'} style={{ position: 'relative' }}>
-                <div className={'name-box'}>
-                  <label>NAME</label>
-                  <br />
+            <div className={'personal-details-sgmnt'} style={{ fontWeight: 500 }}>Personal Information</div>
+            <br />
+            <table className={'personal-details-table'}>
+              <tr>
+                <th>NAME</th>
+                <th>IC NO.</th>
+              </tr>
+              <tr>
+                <td>
                   <input onChange={handleChange('name')}
-                    defaultValue={values.name} placeholder="Enter your Full Name" maxlength="80" ></input>
-                </div>
-                <div className={'ic-box'}>
-                  IC NO.
-                  <br />
+                    defaultValue={values.name} type="text" placeholder="Enter your Full Name" maxlength="80" ></input>
+                </td>
+                <td>
                   <input onChange={handleChange('identification_no')}
                     defaultValue={values.identification_no} type="text" placeholder="XXXXXX-XX-XXXX" maxlength="14" ></input>
-                </div>
-              </div>
-
-              <div className={'dob-box'} style={{ position: 'relative' }}>
-                <label  >DATE OF BIRTH</label> <br />
-                <input onChange={handleChange('dob')}
-                  defaultValue={values.dob} type="date" placeholder="Day / Month / Year"></input>
-              </div>
-
-              <div className={'address-box'} style={{ position: 'relative' }}>
-                <label  >ADDRESS </label> <br />
-                <input onChange={handleChange('address_1')}
-                  defaultValue={values.address_1} type="text" placeholder="Address line 1" size="50"></input><br />
-                <br />
-                <input onChange={handleChange('address_2')}
-                  defaultValue={values.address_2} type="text" placeholder="Address line 2" size="50"></input>
-              </div>
-
-              <div className={'state-postcode-box'} style={{ position: 'relative' }}>
-                <div className={'state-box'}>
-                  <label  >STATE</label>
-                  <br />
+                </td>
+              </tr>
+              <br />
+              <tr>
+                <th>DATE OF BIRTH</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>
+                  <input onChange={handleChange('dob')}
+                    defaultValue={values.dob} type="date" placeholder="Day / Month / Year"></input>
+                </td>
+              </tr>
+              <br />
+              <tr>
+                <th>ADDRESS</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>
+                  <input onChange={handleChange('address_1')}
+                    defaultValue={values.address_1} type="text" placeholder="Address line 1" size="50"></input>
+                </td>
+              </tr>
+              <br />
+              <tr>
+                <td>
+                  <input onChange={handleChange('address_2')}
+                    defaultValue={values.address_2} type="text" placeholder="Address line 2" size="50"></input>
+                </td>
+              </tr>
+              <br />
+              <tr>
+                <th>STATE</th>
+                <th>POSTCODE</th>
+              </tr>
+              <tr>
+                <td>
                   <select onChange={handleChange('state_id')}
                     defaultValue={values.state_id} class="sel-input">
                     <option value="">Select a state</option>
@@ -181,38 +197,34 @@ export class SensitiveData extends Component {
                     <option value="Labuan">WP Labuan</option>
                     <option value="Putrajaya">WP Putrajaya</option>
                   </select>
-                </div>
-                <div className={'postcode-box'}>
-                  <label  >POSTCODE</label>
-                  <br />
+                </td>
+                <td>
                   <input onChange={handleChange('postcode')}
                     defaultValue={values.postcode}
                     type="text" placeholder="00000" maxlength="5"></input>
-                </div>
-              </div>
-              <br />
-              <br />
-              <br />
-            </div>
+                </td>
+              </tr>
+            </table>
+            <br />
             <br />
 
             <div className={'payment-information-sgmnt'} style={{ fontWeight: 500 }}>Payment Information</div>
-            <div className={'payment-info-table'}>
-              <br />
-              <div className={'method-bank-box'}>
-                <div className={'method-box'}>
-                  PAYMENT METHOD
-                  <br />
+            <br />
+            <table className={'personal-details-table'}>
+              <tr>
+                <th>PAYMENT METHOD</th>
+                <th>SELECT YOUR BANK</th>
+              </tr>
+              <tr>
+                <td>
                   <select onChange={handleChange('paymentmethod')}
                     defaultValue={values.paymentmethod} class="sel-input">
                     <option value="">Select payment method</option>
                     <option value="Online Banking">Online Banking</option>
                     <option value="Credit Card">Credit Card</option>
                   </select>
-                </div>
-                <div className={'bank-box'}>
-                  SELECT YOUR BANK
-                  <br />
+                </td>
+                <td>
                   <select onChange={handleChange('bank')}
                     defaultValue={values.bank} class="sel-input">
                     <option value="">Select bank</option>
@@ -233,41 +245,43 @@ export class SensitiveData extends Component {
                     <option value="Standard Chartered Bank">Standard Chartered Bank</option>
                     <option value="UOB">UOB</option>
                   </select>
-                </div>
-              </div>
+                </td>
+              </tr>
               <br />
-            </div>
-            <br />
-            <br />
+            </table>
+
             <br />
 
 
             <div className={'payment-method-sgmnt'} style={{ fontWeight: 500 }}>Contact Information</div>
-            <div className={'payment-method-table'}>
-              <br />
-              <div className={'email-econfirm-box'}>
-                <div className={'email-box'}>
-                  EMAIL ADDRESS<br />
-                  <input onChange={handleChange('email')}
+            <br/>
+            <table className={'personal-details-table'}>
+              <tr>
+                <th>EMAIL ADDRESS</th>
+                <th>CONFIRM EMAIL ADDRESS</th>
+              </tr>
+              <tr>
+                <td>
+                <input onChange={handleChange('email')}
                     defaultValue={values.email} type="text" placeholder="youremail@email.com" ></input>
-                </div>
-                <div className={'econfirm-box'}>
-                  CONFIRM EMAIL ADDRESS<br />
-                  <input type="text" placeholder="youremail@email.com" ></input>
-                </div>
-              </div>
+                </td>
+                <td>
+                <input type="text" placeholder="youremail@email.com" ></input>
+                </td>
+              </tr>
               <br />
-              <div className={'phone-box'}>
-                <label  >PHONE NO:</label> <br />
+              <tr>
+                <th>PHONE NO</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>
                 <input onChange={handleChange('phone')}
                   defaultValue={values.phone}
                   type="text" placeholder="+60 123456789" maxlength="14" ></input>
-              </div>
-              <br />
-              <br />
-
-            </div>
-
+                </td>
+              </tr>
+              </table>
           </div>
           <div className={'right-box'}>
 
@@ -304,7 +318,7 @@ export class SensitiveData extends Component {
 
                 <button onClick={this.back} className={'change-btn'}>Change Plan</button>
 
-                <button onClick={() => this.CreateIndividualOrder()} className={'submit-btn'}>Proceed</button>
+                <button onClick={() => this.CreateIndividualOrder().then(this.continue)} className={'submit-btn'}>Proceed</button>
                 <button onClick={this.continue} className={'proceed-btn'}>Print</button>
               </center>
             </div>
